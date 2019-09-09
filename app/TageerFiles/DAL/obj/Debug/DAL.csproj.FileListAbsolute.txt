@@ -1,0 +1,10 @@
+G:\Projects\FreeProjects\Ahmed Ibrahim\Projects\3-- Boutique Auction\App\TageerFiles\DAL\bin\Debug\DAL.dll
+G:\Projects\FreeProjects\Ahmed Ibrahim\Projects\3-- Boutique Auction\App\TageerFiles\DAL\bin\Debug\DAL.pdb
+G:\Projects\FreeProjects\Ahmed Ibrahim\Projects\3-- Boutique Auction\App\TageerFiles\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+G:\Projects\FreeProjects\Ahmed Ibrahim\Projects\3-- Boutique Auction\App\TageerFiles\DAL\obj\Debug\DAL.dll
+G:\Projects\FreeProjects\Ahmed Ibrahim\Projects\3-- Boutique Auction\App\TageerFiles\DAL\obj\Debug\DAL.pdb
+G:\Projects\FreeProjects\Mostafa\1--Tajeer\App\TageerFiles\DAL\bin\Debug\DAL.dll
+G:\Projects\FreeProjects\Mostafa\1--Tajeer\App\TageerFiles\DAL\bin\Debug\DAL.pdb
+G:\Projects\FreeProjects\Mostafa\1--Tajeer\App\TageerFiles\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+G:\Projects\FreeProjects\Mostafa\1--Tajeer\App\TageerFiles\DAL\obj\Debug\DAL.dll
+G:\Projects\FreeProjects\Mostafa\1--Tajeer\App\TageerFiles\DAL\obj\Debug\DAL.pdb

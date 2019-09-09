@@ -1,0 +1,145 @@
+﻿
+@{
+    ViewBag.Title = Token.RentalMaterials;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var priv = PageService.GetPageRole(PageEnumVM.RentalMaterials);
+    ViewBag.Description = Token.ThisPageFor + Token.Display + " " + Token.AndChar + " " + Token.Added + " " + Token.AndChar + " " + Token.Edit + " " + Token.AndChar + " " + Token.Delete + " " + Token.For + " " + Token.RentalMaterial;
+
+}
+<!--body-->
+
+@if (priv.IsDisplay)
+{
+    <div ng-app="ngApp" ng-controller="ctrlRentalMaterials">
+        <div class="">
+            <!-- BEGIN SAMPLE TABLE PORTLET-->
+            <pre>
+بما ان ليس كل الماركات سوف تظهر مع كل انواع الاعلانات اذا يجب علينا تحديد الماركة ومع من سوف تظهر
+سواء سوف نضعها مع نوع الاعلان الفرعى او مع نوع الاعلان الاساسى كـ كل 
+            </pre>
+            <div class="portlet">
+                <div class="portlet-title">
+                    <div class="caption">
+                        <i class="fa fa-bell-o"></i>@Token.RentalMaterials @Token.Table
+                    </div>
+                    <div class="tools">
+                        <a href="javascript:;" class="collapse" data-original-title="@Token.Collapse" title="@Token.Collapse"> </a>
+                        <a class="reload" data-original-title="@Token.ReloadData" title="@Token.ReloadData" ng-click="CallFunctions(RentalMaterial.FKCategory_Id)"> </a>
+                        <a href="javascript:;" class="remove" data-original-title="@Token.Remove" title="@Token.Remove"> </a>
+                    </div>
+                </div>
+                <!--Div Form Table-->
+                <div class="portlet-body" style="display: block;">
+                    <div class="table-scrollable">
+                        <br />
+                        <!--Form Add New And Show And Edit-->
+                        <form name="frmRentalMaterial" novalidate>
+
+                            <!--Setting-->
+                            <div class="col-lg-12 col-md-12">
+                                <!--Categories-->
+                                <div class="form-group col-lg-3 col-md-3">
+                                    <label class="control-label"> @Token.Category <label class="lableErorr">*</label> </label>
+                                    <select class="form-control cursor-pointer" name="rentalType" ng-model="RentalMaterial.FKCategory_Id" ng-options="x.Id as x.CategoryName for x in Categories| orderBy :'+CategoryName'" ng-required="true"></select>
+                                    <label class="lableErorr" ng-show="frmRentalMaterial.rentalType.$error.required&&IsSubmit">@Token.FiledIsRequired</label>
+                                </div>
+
+                                <!--Sub Category-->
+                                <div class="form-group col-lg-3 col-md-3">
+                                    <label class="control-label"> @Token.SubCategory </label>
+                                    <div class="icon-addon addon-sm">
+                                        <select class="form-control cursor-pointer" name="rentalCategory" ng-model="RentalMaterial.FKSubCategory_Id" ng-options="x.Id as x.SubCategoryName for x in SubCategories|filter:{'FKCategory_Id':RentalMaterial.FKCategory_Id}| orderBy :'+SubCategoryName'"></select>
+                                        <label ng-hide="RentalMaterial.FKSubCategory_Id != null" for="txt2" class="glyphicon glyphicon-search" rel="tooltip"></label>
+                                        <label ng-show="RentalMaterial.FKSubCategory_Id != null" class="glyphicon glyphicon-remove-circle " ng-click="RentalMaterial.FKSubCategory_Id=null"></label>
+                                    </div>
+                                </div>
+
+                                <!--Display-->
+                                <div class="form-group col-lg-3 col-md-3">
+                                    <br />
+                                    <a class="btn btn-default   red-stripe" ng-click="GetMaterials()">
+                                        @Token.Display
+                                        <i class="fa fa-search"></i>
+                                    </a>
+                                </div>
+
+                                <!--Save Change-->
+                                <div class="form-group col-lg-3 col-md-3">
+                                    <br />
+                                    <a class="btn btn-default green-stripe  " ng-click="SaveChange()">
+                                        @Token.SaveChange
+                                        <i class="fa fa-save"></i>
+                                    </a>
+                                </div>
+
+                            </div>
+
+                            <!--Materials & rental Category-->
+                            <div class="col-lg-12 col-md-12">
+                                <div class="form-group">
+                                    <!--Materials-->
+                                    <div class="col-lg-6 col-md-6">
+                                        <!--Titel-->
+                                        <div>
+                                            <label>@Token.Materials :- </label>
+                                        </div>
+                                        <!--List-->
+                                        <ul class="list-group">
+                                            <li class="list-group-item active"><input type="text" class="form-control" ng-model="SearchMaterial" placeholder="@Token.Search @Token.In {{AllMaterialCount}} @Token.Items..." /></li>
+                                            <li class="list-group-item cursorPointer" ng-repeat="x in AllMaterial|filter :{'MaterialName':SearchMaterial}|filterIsEquals:'State':State.Delete:0| orderBy :'+MaterialName'" ng-click="MaterialChangeState(x)">{{x.MaterialName}} <i class="fas fa-trash faRed" ng-show="x.State==State.Delete"></i></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6">
+                                        <!--Titel-->
+                                        <div>
+                                            <label>@Token.RentalMaterials :- </label>
+                                        </div>
+                                        <!--List-->
+                                        <ul class="list-group">
+                                            <li class="list-group-item active"><input type="text" class="form-control" ng-model="SearchRentalMaterial" placeholder="@Token.Search @Token.In {{RentalMaterialsCount}} @Token.Items..." /></li>
+                                            <li class="list-group-item  " ng-repeat="x in AllMaterial|filter :{'MaterialName':SearchRentalMaterial} |filterIsEquals:'State':State.Old:State.Create:State.Update| orderBy :'+MaterialName'" >
+                                           
+                                              
+
+                                                <!--Material-->
+                                                <label class="cursorPointer" ng-click="MaterialChangeState(x)">
+                                                    {{x.MaterialName}}
+                                                    <i class="fas fa-plus-circle faGreen" ng-show="x.State==State.Create"></i>
+                                                    <i class="fas fa-edit faOrange" ng-show="x.State==State.Update"></i>
+                                                </label>
+
+                                            </li>
+                                        </ul>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+            <!-- END SAMPLE TABLE PORTLET-->
+
+
+
+
+        </div>
+        <pre ng-show="false">{{RentalMaterial|json}}</pre>
+        <pre ng-show="false">{{RentalMaterials|json:4}}</pre>
+
+    </div>
+}
+else
+{
+    <h1 class="lableErorr text-center">
+        <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
+        @Token.CanNotDisplay
+    </h1>
+}
+@section scripts{
+    <script src="~/Scripts/Angular/Views/RentalMaterials/Service.js"></script>
+    <script src="~/Scripts/Angular/Views/RentalMaterials/ControllerJs.js"></script>
+}
+

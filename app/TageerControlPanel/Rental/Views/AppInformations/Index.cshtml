@@ -1,0 +1,148 @@
+﻿
+@{
+    ViewBag.Title = Token.AppInformations;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Description = Token.ThisPageFor + " "
+       + Token.Display + " " + Token.AndChar + " "
+       + Token.Update + " " + Token.AndChar + " "
+       + Token.AppInformations;
+}
+<!--body-->
+
+<div ng-app="ngApp" ng-controller="ctrlAppsInformations">
+    <div class="col-md-12">
+        <!--Form-->
+        <div class="profile-content">
+
+            <div class="portlet light ">
+                <div class="portlet-title tabbable-line">
+                    <div class="caption caption-md">
+                        <i class="icon-globe theme-font hide"></i>
+                        <span class="caption-subject font-blue-madison bold uppercase">@Token.AppInformations</span>
+                    </div>
+                    <div class="portlet-body">
+                        <form novalidate name="frmAppsInformation">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <!--ControlPanelLink-->
+                                    <div class="form-group col-lg-6 col-md-6">
+                                        <label class="control-label">{{AppsInformations[0].Name}}  :<label class="lableErorr">*</label></label>
+                                        <input type="url" class="form-control min-width-100-important " name="filed" ng-model="AppsInformations[0].Value"
+                                               ng-required="true" />
+                                        <label class="lableErorr" ng-show="frmAppsInformation.filed.$error.required&&IsSubmit">@Token.FiledIsRequired</label>
+                                        <label class="lableErorr" ng-show="frmAppsInformation.filed.$error.url&&IsSubmit">@Token.InvalidLink</label>
+                                    </div>
+                                    <!--ApiLink-->
+                                    <div class="form-group col-lg-6 col-md-6">
+                                        <label class="control-label">{{AppsInformations[1].Name}}  :<label class="lableErorr">*</label> </label>
+                                        <input type="url" class="form-control min-width-100-important " name="filed2" ng-model="AppsInformations[1].Value"
+                                               ng-required="true" />
+                                        <label class="lableErorr" ng-show="frmAppsInformation.filed2.$error.required&&IsSubmit">@Token.FiledIsRequired</label>
+                                        <label class="lableErorr" ng-show="frmAppsInformation.filed2.$error.url&&IsSubmit">@Token.InvalidLink</label>
+                                    </div>
+                                    <!--ApiFiles-->
+                                    <div class="form-group col-lg-6 col-md-6">
+                                        <label class="control-label">{{AppsInformations[2].Name}}  :<label class="lableErorr">*</label> </label>
+                                        <input type="url" class="form-control min-width-100-important " name="filed3" ng-model="AppsInformations[2].Value"
+                                               ng-required="true" />
+                                        <label class="lableErorr" ng-show="frmAppsInformation.filed3.$error.required&&IsSubmit">@Token.FiledIsRequired</label>
+                                        <label class="lableErorr" ng-show="frmAppsInformation.filed3.$error.url&&IsSubmit">@Token.InvalidLink</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <!--FaceBook-->
+                                    <div class="form-group col-lg-6 col-md-6">
+                                        <label class="control-label">{{AppsInformations[10].Name}}  : </label>
+                                        <input type="url" class="form-control min-width-100-important " name="filed5" ng-model="AppsInformations[10].Value"
+                                               ng-required="true" />
+                                        <label class="lableErorr" ng-show="frmAppsInformation.filed5.$error.url&&IsSubmit">@Token.InvalidLink</label>
+                                    </div>
+                                    <!--Twitter-->
+                                    <div class="form-group col-lg-6 col-md-6">
+                                        <label class="control-label">{{AppsInformations[11].Name}}  :  </label>
+                                        <input type="url" class="form-control min-width-100-important " name="filed6" ng-model="AppsInformations[11].Value"
+                                               ng-required="true" />
+                                        <label class="lableErorr" ng-show="frmAppsInformation.filed6.$error.url&&IsSubmit">@Token.InvalidLink</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <!--Phone-->
+                                    <div class="form-group col-lg-6 col-md-6">
+                                        <label class="control-label">{{AppsInformations[7].Name}}  :</label>
+                                        <input type="text" class="form-control min-width-100-important " ng-model="AppsInformations[7].Value" />
+                                    </div>
+                                    <!--Phone-->
+                                    <div class="form-group col-lg-6 col-md-6">
+                                        <label class="control-label">{{AppsInformations[8].Name}}  :</label>
+                                        <input type="email" class="form-control min-width-100-important " name="fieldPhone" ng-model="AppsInformations[8].Value" />
+                                        <label class="lableErorr" ng-show="frmAppsInformation.fieldPhone.$invalid&&IsSubmit">@Token.InvalidData</label>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-md-12">
+                                    <!--AddressEn-->
+                                    <div class="form-group col-lg-6 col-md-6">
+                                        <label class="control-label">{{AppsInformations[5].Name}}  :</label>
+                                        <textarea rows="6" class="form-control min-width-100-important " ng-model="AppsInformations[5].Value"></textarea>
+                                    </div>
+                                    <!--AddressAr-->
+                                    <div class="form-group col-lg-6 col-md-6">
+                                        <label class="control-label">{{AppsInformations[6].Name}}  :</label>
+                                        <textarea rows="6" class="form-control min-width-100-important " ng-model="AppsInformations[6].Value"></textarea>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <!--FooterDescriptionAr-->
+                                    <div class="form-group col-lg-6 col-md-6">
+                                        <label class="control-label">{{AppsInformations[12].Name}}  :</label>
+                                        <textarea rows="6" class="form-control min-width-100-important " ng-model="AppsInformations[12].Value"></textarea>
+                                    </div>
+                                    <!--FooterDescriptionEn-->
+                                    <div class="form-group col-lg-6 col-md-6">
+                                        <label class="control-label">{{AppsInformations[13].Name}}  :</label>
+                                        <textarea rows="6" class="form-control min-width-100-important " ng-model="AppsInformations[13].Value"></textarea>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-12">
+                                    <!--AboutUsEn-->
+                                    <div class="form-group col-lg-6 col-md-6">
+                                        <label class="control-label">{{AppsInformations[3].Name}}  :</label>
+                                        <textarea rows="6" class="form-control min-width-100-important " ng-model="AppsInformations[3].Value"></textarea>
+                                    </div>
+                                    <!--ApoutUsAr-->
+                                    <div class="form-group col-lg-6 col-md-6">
+                                        <label class="control-label">{{AppsInformations[4].Name}}  :</label>
+                                        <textarea rows="6" class="form-control min-width-100-important " ng-model="AppsInformations[4].Value"></textarea>
+                                    </div>
+                                    <div class="form-group col-lg-6 col-md-6">
+                                        <label class="control-label">{{AppsInformations[9].Name}}  :</label>
+                                        <div class="fileinput-new thumbnail">
+                                            <img src="{{imageeReview||AppsInformations[9].Value}}" alt="" width="200" height="200">
+                                        </div>
+                                        <div>
+                                            <ng-uplaod-image up-model-file="myImage" up-model-image="imageeReview" up-name="anyName" up-accept=".jpg,.png,jpeg"></ng-uplaod-image>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div>
+                    <a class="btn btn-default green-stripe " ng-class="{'green':frmAppsInformation.$valid}" ng-click="frmAppsInformation.$valid?saveChange():IsSubmit=true">
+                        <i class="fas fa-save"></i>
+                        @Token.Save
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@section scripts{
+    <script src="~/Scripts/Angular/Views/appInformations/Service.js"></script>
+    <script src="~/Scripts/Angular/Views/appInformations/Controller.js"></script>
+}
+

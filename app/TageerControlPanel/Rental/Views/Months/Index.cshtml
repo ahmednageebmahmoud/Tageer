@@ -1,0 +1,289 @@
+﻿
+@{
+    ViewBag.Title = Token.Month;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var priv = PageService.GetPageRole(PageEnumVM.Months);
+
+    ViewBag.Description = Token.ThisPageFor + Token.Display + " " + Token.AndChar + " " + Token.Added + " " + Token.AndChar + " " + Token.Edit + " " + Token.AndChar + " " + Token.Delete + " " + Token.For + " " + Token.Month;
+
+}
+<!--body-->
+@if (priv.IsDisplay)
+{<div ng-app="ngApp" ng-controller="ctrlMonth" ng-init="warningTitle='@Token.Warning';
+     CanNotDuplicate='@Token.CanNotDuplicate'">
+        <div class="">
+            <!-- BEGIN SAMPLE TABLE PORTLET-->
+            <div class="portlet">
+                <div class="portlet-title">
+                    <div class="caption">
+                        <i class="fa fa-bell-o"></i>@Token.Month @Token.Table
+                    </div>
+                    <div class="tools">
+                        <a href="javascript:;" class="collapse" data-original-title="@Token.collapse" title="@Token.collapse"> </a>
+                        <a class="reload" data-original-title="@Token.ReloadData" title="@Token.ReloadData" ng-click="CallFunctions(Month.FkdateTypeId)"> </a>
+                        <a href="javascript:;" class="remove" data-original-title="@Token.Remove" title="@Token.Remove"> </a>
+                    </div>
+                </div>
+                <!--Div Form Table-->
+                <div class="portlet-body" style="display: block;">
+                    <div class="table-scrollable">
+                        <!--Form Add New And Show And Edit-->
+                        <form name="frmMonth" novalidate ng-fop-data="AllMonth" ng-fop-data-repeat="AllMonthRepeat">
+                            <!--Date Type-->
+                            <div class="form-group col-lg-4">
+                                <label class="control-label"> @Token.DateType <label class="lableErorr">*</label> </label>
+                                <select class="form-control cursor-pointer" name="dateType" ng-model="Month.FkdateTypeId" ng-change="GetMonths(Month.FkdateTypeId)" ng-required="true">
+                                    <option value="@Convert.ToInt32(Enums.DateTypeEnum.Melady)" label=@Token.Melady></option>
+                                    <option value="@Convert.ToInt32(Enums.DateTypeEnum.Hegrey)" label=@Token.Hegrey></option>
+                                </select>
+                                <label class="lableErorr" ng-show="frmMonth.country.$error.required&&IsSubmit">@Token.FiledIsRequired</label>
+                            </div>
+                            <table class="table table-striped table-bordered table-advance table-hover">
+                                <thead>
+                                    <tr>
+                                        <th class="th-25">
+                                            <ng-fop ng-fop-filter="true"
+                                                    ng-fop-order-by="true"
+                                                    ng-fop-requierd="true"
+                                                    ng-fop-class-icon="fa fa-pencil"
+                                                    ng-fop-label="@Token.NameAr"
+                                                    ng-fop-placeholder="@Token.Search..."
+                                                    ng-fop-model="NameAr"
+                                                    ng-fop-type-filter="text"
+                                                    @*OrderBY*@
+                                                    ng-fop-order-by-defult="true"
+                                                    ng-fop-order-by-defult-case="true"></ng-fop>
+                                        </th>
+                                        <th class="th-25">
+                                            <ng-fop ng-fop-filter="true"
+                                                    ng-fop-order-by="true"
+                                                    ng-fop-requierd="true"
+                                                    ng-fop-class-icon="fa fa-pencil"
+                                                    ng-fop-label="@Token.NameEn"
+                                                    ng-fop-placeholder="@Token.Search..."
+                                                    ng-fop-model="NameEn"
+                                                    ng-fop-type-filter="text"></ng-fop>
+                                        </th>
+                                        <th class="th-20">
+                                            <ng-fop ng-fop-filter="true"
+                                                    ng-fop-order-by="true"
+                                                    ng-fop-requierd="true"
+                                                    ng-fop-class-icon="fa fa-pencil"
+                                                    ng-fop-label="@Token.Short @Token.Name"
+                                                    ng-fop-placeholder="@Token.Search..."
+                                                    ng-fop-model="ShortName"
+                                                    ng-fop-type-filter="text"></ng-fop>
+                                        </th>
+                                        <th class="th-20">
+                                            <ng-fop ng-fop-filter="true"
+                                                    ng-fop-order-by="true"
+                                                    ng-fop-requierd="true"
+                                                    ng-fop-class-icon="fa fa-pencil"
+                                                    ng-fop-label="@Token.Index"
+                                                    ng-fop-placeholder="@Token.Search..."
+                                                    ng-fop-model="MonthIndex"
+                                                    ng-fop-type-filter="number"
+                                                    ng-fop-min="0"
+                                                    ng-fop-max="12"></ng-fop>
+                                        </th>
+                                        <th class="th-10"> </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @if (priv.IsCreate)
+                                    {
+                                        <tr>
+                                            <td class="highlight">
+                                                <!--NameAr-->
+                                                <div class="form-group ">
+                                                    <input type="text" class="form-control" name="nameAr" ng-model="Month.NameAr" ng-maxlength="20" ng-required="true" />
+                                                    <label class="lableErorr" ng-show="frmMonth.nameAr.$error.required&&IsSubmit">@Token.FiledIsRequired</label>
+                                                    <label class="lableErorr" ng-show="NameArDuplicate">{{CanNotDuplicate}}</label>
+                                                    <label class="lableErorr" ng-show="frmMonth.nameAr.$error.maxlength&&IsSubmit">@Token.MaxLength 20</label>
+                                                </div>
+                                            </td>
+                                            <td class="hidden-xs">
+                                                <!--NameEn-->
+                                                <div class="form-group ">
+                                                    <input type="text" class="form-control" name="nameEn" ng-model="Month.NameEn " ng-maxlength="20" ng-required="true" />
+                                                    <label class="lableErorr" ng-show="frmMonth.nameEn.$error.required&&IsSubmit">@Token.FiledIsRequired</label>
+                                                    <label class="lableErorr" ng-show="NameEnDuplicate">{{CanNotDuplicate}}</label>
+                                                    <label class="lableErorr" ng-show="frmMonth.nameEn.$error.maxlength&&IsSubmit">@Token.MaxLength 20</label>
+                                                </div>
+                                            </td>
+                                            <td class="highlight">
+                                                <!--ShortName-->
+                                                <div class="form-group ">
+                                                    <input type="text" class="form-control" name="shortName" ng-model="Month.ShortName" ng-maxlength="6" ng-required="true" />
+                                                    <label class="lableErorr" ng-show="frmMonth.shortName.$error.required&&IsSubmit">@Token.FiledIsRequired</label>
+                                                    <label class="lableErorr" ng-show="ShortNameDuplicate">{{CanNotDuplicate}}</label>
+                                                    <label class="lableErorr" ng-show="frmMonth.shortName.$error.maxlength&&IsSubmit">@Token.MaxLength 6</label>
+                                                </div>
+                                            </td>
+                                            <td class="hidden-xs">
+                                                <!--Index-->
+                                                <div class="form-group ">
+                                                    <input type="number" class="form-control" name="index" min="1" max="12" ng-model="Month.MonthIndex" ng-required="true" />
+                                                    <label class="lableErorr" ng-show="frmMonth.Index.$error.required&&IsSubmit">@Token.FiledIsRequired</label>
+                                                    <label class="lableErorr" ng-show="MonthIndexDuplicate">{{CanNotDuplicate}}</label>
+                                                    <label class="lableErorr" ng-show="frmMonth.Index.$error.min&&IsSubmit">@Token.MinLength 1</label>
+                                                    <label class="lableErorr" ng-show="frmMonth.Index.$error.max&&IsSubmit">@Token.MaxLength 12</label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <i class="fa fa-plus cursor-pointer icont-controller" title="@Token.Save" data-placement="top" data-toggle="tooltip" ng-click="frmMonth.$valid?Create(Month):IsSubmit=true"></i>
+                                                <i class="fa fa-undo cursor-pointer icont-controller" title="@Token.Undo" data-placement="top" data-toggle="tooltip" ng-click="Restart()"></i>
+                                            </td>
+                                        </tr>
+                                    }
+
+                                    <tr ng-repeat="x in AllMonthRepeat track by $index" ng-show="x.State!='Delete'">
+                                        <td class="highlight">
+                                            <!--Name Ar-->
+                                            <input type="text" class="form-control input-redonly" ng-model="x.NameAr" ng-readonly="ShowEdit!=$index" />
+                                            <label class="lableErorr" ng-show="x.NameArDuplicate">{{CanNotDuplicate}}</label>
+
+                                            <label class="lableErorr " ng-show="x.NameAr==''&&IsEdit">@Token.FiledIsRequired</label>
+                                            <label class="lableErorr" ng-show="x.NameAr.length>50&&IsEdit">@Token.MaxLength 20</label>
+                                        </td>
+                                        <td class="hidden-xs">
+                                            <!--Name En-->
+                                            <input type="text" class="form-control input-redonly" ng-model="x.NameEn" ng-readonly="ShowEdit!=$index" />
+                                            <label class="lableErorr" ng-show="x.NameEnDuplicate">{{CanNotDuplicate}}</label>
+
+                                            <label class="lableErorr" ng-show="x.NameEn==''&&IsEdit">@Token.FiledIsRequired</label>
+                                            <label class="lableErorr" ng-show="x.NameEn.length>50&&IsEdit">@Token.MaxLength 20</label>
+                                        </td>
+                                        <td class="highlight">
+                                            <!--ShortName-->
+                                            <div class="form-group ">
+                                                <input type="text" class="form-control input-redonly" ng-model="x.ShortName" ng-readonly="ShowEdit!=$index" />
+                                                <label class="lableErorr" ng-show="x.ShortNameDuplicate">{{CanNotDuplicate}}</label>
+                                                <label class="lableErorr" ng-show="x.ShortName==''&&IsEdit">@Token.FiledIsRequired</label>
+                                                <label class="lableErorr" ng-show="x.ShortName.length>50&&IsEdit">@Token.MaxLength 6</label>
+
+                                            </div>
+                                        </td>
+                                        <td class="hidden-xs">
+                                            <!--Index-->
+                                            <div class="form-group ">
+                                                <input type="number" class="form-control input-redonly" name="index" min="1" max="12" ng-model="x.MonthIndex" ng-required="true" ng-readonly="ShowEdit!=$index" />
+                                                <label class="lableErorr" ng-show="x.MonthIndexDuplicate">{{CanNotDuplicate}}</label>
+                                                <label class="lableErorr" ng-show="x.MonthIndex==''&&IsEdit">@Token.FiledIsRequired</label>
+                                                <label class="lableErorr" ng-show="x.MonthIndex<1&&IsEdit">@Token.MinLength 1</label>
+                                                <label class="lableErorr" ng-show="x.MonthIndex>12&&IsEdit">@Token.MaxLength 12</label>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            @if (priv.IsUpdate)
+                                            {
+                                                <i class="fa fa-edit cursor-pointer icont-controller" title="@Token.Edit" data-placement="top" data-toggle="tooltip" ng-show="ShowEdit!=$index" ng-click="Change($index)"></i>
+                                                <i class="fa fa-save cursor-pointer icont-controller" title="@Token.Save" data-placement="top" data-toggle="tooltip" ng-show="ShowEdit==$index" ng-click="(x.NameAr!=''&&x.NameAr.length<=20&&x.NameEn!=''&&x.NameEn.length<=20&&x.MonthIndex<=12&&x.MonthIndex>=1&&x.MonthIndex!='')?Edit(x):IsEdit=true"></i>
+                                                <i class="fa fa-undo cursor-pointer icont-controller" title="@Token.Undo" data-placement="top" data-toggle="tooltip" ng-show="ShowEdit==$index" ng-click="RestartEdit(true)"></i>
+                                            }
+                                            @if (priv.IsDelete)
+                                            {
+                                                <i class="fa fa-trash  cursor-pointer icont-controller" title="@Token.Delete" data-placement="top" data-toggle="tooltip" ng-show="ShowEdit!=$index" ng-click="DeleteConfirm(x.Id)"></i>
+                                            }
+                                        </td>
+                                    </tr>
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <td colspan="4">
+                                            <!--Paging-->
+                                            <ng-paging></ng-paging>
+                                        </td>
+                                        <td>
+                                            <a class="btn btn-default green-stripe " ng-class="{'green':frmUserProfile.$valid}" ng-click="SaveChenage(AllMonth)">
+                                                @Token.SaveChange
+                                                <i class="fa fa-save"></i>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <!-- END SAMPLE TABLE PORTLET-->
+        </div>
+        <!--Delete Undo-->
+        <div class="portlet-body" style="display: block;">
+            <div class="table-scrollable">
+
+                <div class="col-lg-3 col-md-3">
+                    <div class="caption">
+                        <i class="fa fa-bell-o"></i>@Token.Undo       @Token.Delete
+                    </div>
+                    <table class="table table-striped table-bordered table-advance table-hover">
+                        <thead>
+                            <tr>
+                                <th class="th-90">
+                                    <div class="icon-addon addon-sm">
+                                        <input type="text" class="form-control ng-pristine ng-valid ng-empty ng-touched" placeholder="@Token.Search..." ng-model="MonthName">
+                                        <label ng-show="MonthName.length==0||MonthName==null||MonthName==undefined" for="txt2" class="glyphicon glyphicon-search" rel="tooltip"></label>
+                                        <label ng-show="MonthName.length>0&amp;&amp;MonthName!=null" class="glyphicon glyphicon-remove-circle ng-hide" ng-click="MonthName=undefined"></label>
+                                    </div>
+                                </th>
+                                <th class="th-10">
+
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="x in AllMonth|filter:{'MonthName':MonthName}" ng-show="x.State=='Delete'">
+                                <td>{{x.MonthName}}</td>
+                                <td><i class="fa fa-undo cursor-pointer icont-controller" title="@Token.Undo" data-placement="top" data-toggle="tooltip" ng-click="x.State=null"></i></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+                </div>
+                <pre ng-show="false">{{Month|json}}</pre>
+                <pre ng-show="false">{{AllMonth|json:4}}</pre>
+
+
+
+                <!-- Delete Confirm -->
+                <div class="modal fade " id="DeleteConfirm" role="dialog">
+                    <div class="modal-dialog modal-sm">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                <h4 class="modal-title">@Token.DeleteConfirm</h4>
+                            </div>
+                            <div class="modal-body">
+                                <p>@Token.AreYouSureDelete ?</p>
+                            </div>
+                            <div class="modal-footer">
+                                <button class="btn btn-danger" ng-click="Delete( )">
+                                    @Token.YesDelete
+                                    <i class="fa fa-trash"></i>
+                                </button>
+                                <button class="btn btn-default" ng-click="CancelDelete( )">
+                                    @Token.Cancel
+                                    <i class="fa fa-undo"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            }
+            else
+            {
+            <h1 class="lableErorr text-center">
+                <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
+                @Token.CanNotDisplay
+            </h1>
+            }
+
+            @section scripts{
+                <script src="~/Scripts/Angular/ViewsNg/Months/Service.js"></script>
+                <script src="~/Scripts/Angular/ViewsNg/Months/ControllerJs.js"></script>
+            }
+

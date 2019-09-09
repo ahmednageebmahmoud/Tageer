@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="40a89c50b1264c1db3b7448652bd6154" Name="Diagram1">
+        <EntityTypeShape EntityType="TageerModel.AdComment" Width="1.5" PointX="18" PointY="33.625" />
+        <EntityTypeShape EntityType="TageerModel.AdDirectFieldDetail" Width="1.5" PointX="15" PointY="41.125" />
+        <EntityTypeShape EntityType="TageerModel.AdFavorite" Width="1.5" PointX="15" PointY="34.75" />
+        <EntityTypeShape EntityType="TageerModel.AdGroupsDetail" Width="1.5" PointX="18" PointY="37.375" />
+        <EntityTypeShape EntityType="TageerModel.AdIndividualFieldsDetail" Width="1.5" PointX="15" PointY="37.625" />
+        <EntityTypeShape EntityType="TageerModel.Ad" Width="1.5" PointX="12.75" PointY="36.375" />
+        <EntityTypeShape EntityType="TageerModel.Category" Width="1.5" PointX="5.25" PointY="34.75" />
+        <EntityTypeShape EntityType="TageerModel.DirectField" Width="1.5" PointX="10.5" PointY="50" />
+        <EntityTypeShape EntityType="TageerModel.Group" Width="1.5" PointX="5.25" PointY="31.375" />
+        <EntityTypeShape EntityType="TageerModel.GroupsDisplayType" Width="1.5" PointX="7.5" PointY="32.375" />
+        <EntityTypeShape EntityType="TageerModel.GroupsItem" Width="1.5" PointX="8.25" PointY="39.625" />
+        <EntityTypeShape EntityType="TageerModel.IndividualField" Width="1.5" PointX="12.75" PointY="28.625" />
+        <EntityTypeShape EntityType="TageerModel.RentalDirectField" Width="1.5" PointX="12.75" PointY="42.5" />
+        <EntityTypeShape EntityType="TageerModel.RentalGroupsItem" Width="1.5" PointX="10.5" PointY="35.625" />
+        <EntityTypeShape EntityType="TageerModel.RentalIndividualField" Width="1.5" PointX="15.75" PointY="30.375" />
+        <EntityTypeShape EntityType="TageerModel.RentalMark" Width="1.5" PointX="17.75" PointY="41.625" />
+        <EntityTypeShape EntityType="TageerModel.RentalMaterial" Width="1.5" PointX="12.75" PointY="32.625" />
+        <EntityTypeShape EntityType="TageerModel.RentalTimesType" Width="1.5" PointX="10.5" PointY="29.75" />
+        <EntityTypeShape EntityType="TageerModel.SubCategory" Width="1.5" PointX="10.5" PointY="38.75" />
+        <EntityTypeShape EntityType="TageerModel.Activity" Width="1.5" PointX="21" PointY="51.25" />
+        <EntityTypeShape EntityType="TageerModel.Address" Width="1.5" PointX="9.75" PointY="43.875" />
+        <EntityTypeShape EntityType="TageerModel.AlbumFile" Width="1.5" PointX="8.25" PointY="36.125" />
+        <EntityTypeShape EntityType="TageerModel.Album" Width="1.5" PointX="10.5" PointY="32.25" />
+        <EntityTypeShape EntityType="TageerModel.AllFile" Width="1.5" PointX="3" PointY="35.625" />
+        <EntityTypeShape EntityType="TageerModel.AppsInformation" Width="1.5" PointX="5.25" PointY="39.5" />
+        <EntityTypeShape EntityType="TageerModel.Area" Width="1.5" PointX="12.75" PointY="52.25" />
+        <EntityTypeShape EntityType="TageerModel.ChatMessage" Width="1.5" PointX="23.25" PointY="44" />
+        <EntityTypeShape EntityType="TageerModel.Chat" Width="1.5" PointX="21" PointY="40.25" />
+        <EntityTypeShape EntityType="TageerModel.Company" Width="1.5" PointX="23.25" PointY="47.125" />
+        <EntityTypeShape EntityType="TageerModel.CompanyOffice" Width="1.5" PointX="12" PointY="46.125" />
+        <EntityTypeShape EntityType="TageerModel.Country" Width="1.5" PointX="5.25" PointY="42.125" />
+        <EntityTypeShape EntityType="TageerModel.EmailsSubscription" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="TageerModel.FileType" Width="1.5" PointX="0.75" PointY="36.375" />
+        <EntityTypeShape EntityType="TageerModel.Gender" Width="1.5" PointX="15.75" PointY="47.125" />
+        <EntityTypeShape EntityType="TageerModel.InputsType" Width="1.5" PointX="5.25" PointY="28.125" />
+        <EntityTypeShape EntityType="TageerModel.LanguageType" Width="1.5" PointX="15.75" PointY="49.5" />
+        <EntityTypeShape EntityType="TageerModel.Location" Width="1.5" PointX="12.75" PointY="55" />
+        <EntityTypeShape EntityType="TageerModel.Mark" Width="1.5" PointX="12.75" PointY="49.625" />
+        <EntityTypeShape EntityType="TageerModel.Material" Width="1.5" PointX="12.75" PointY="25.875" />
+        <EntityTypeShape EntityType="TageerModel.Menu" Width="1.5" PointX="21" PointY="65.125" />
+        <EntityTypeShape EntityType="TageerModel.Nationality" Width="1.5" PointX="12.75" PointY="60.125" />
+        <EntityTypeShape EntityType="TageerModel.Notification" Width="1.5" PointX="21" PointY="54.625" />
+        <EntityTypeShape EntityType="TageerModel.Page" Width="1.5" PointX="18" PointY="55.75" />
+        <EntityTypeShape EntityType="TageerModel.PagesManagement" Width="1.5" PointX="20.25" PointY="59" />
+        <EntityTypeShape EntityType="TageerModel.PagesRole" Width="1.5" PointX="20.25" PointY="46.75" />
+        <EntityTypeShape EntityType="TageerModel.Province" Width="1.5" PointX="7.5" PointY="46" />
+        <EntityTypeShape EntityType="TageerModel.Role" Width="1.5" PointX="18" PointY="52.25" />
+        <EntityTypeShape EntityType="TageerModel.Seo" Width="1.5" PointX="18" PointY="65.875" />
+        <EntityTypeShape EntityType="TageerModel.Size" Width="1.5" PointX="12.75" PointY="57.75" />
+        <EntityTypeShape EntityType="TageerModel.State" Width="1.5" PointX="2.75" PointY="0.75" />
+        <EntityTypeShape EntityType="TageerModel.SubMenu" Width="1.5" PointX="23.25" PointY="56" />
+        <EntityTypeShape EntityType="TageerModel.TechnicalSupport" Width="1.5" PointX="0.75" PointY="3.75" />
+        <EntityTypeShape EntityType="TageerModel.UserLogin" Width="1.5" PointX="20.25" PointY="62.375" />
+        <EntityTypeShape EntityType="TageerModel.UserRole" Width="1.5" PointX="20.25" PointY="43.125" />
+        <EntityTypeShape EntityType="TageerModel.User" Width="1.5" PointX="18" PointY="45" />
+        <EntityTypeShape EntityType="TageerModel.UsersPrivateNotify" Width="1.5" PointX="23.25" PointY="50.125" />
+        <EntityTypeShape EntityType="TageerModel.AdVisitor" Width="1.5" PointX="2.75" PointY="3.75" />
+        <AssociationConnector Association="TageerModel.FK_AdComment_Ads" />
+        <AssociationConnector Association="TageerModel.FK_AdComment_Users" />
+        <AssociationConnector Association="TageerModel.FK_AdBasicDetails_Materials" />
+        <AssociationConnector Association="TageerModel.FK_AdBasicDetails_Nationalities" />
+        <AssociationConnector Association="TageerModel.FK_AdBasicDetails_Sizes" />
+        <AssociationConnector Association="TageerModel.FK_AdDetails_Locations" />
+        <AssociationConnector Association="TageerModel.FK_AdDirectFieldDetails_Ads" />
+        <AssociationConnector Association="TageerModel.FK_AdDirectFieldDetails_Areas" />
+        <AssociationConnector Association="TageerModel.FK_AdDirectFieldDetails_Countries" />
+        <AssociationConnector Association="TageerModel.FK_AdDirectFieldDetails_Marks" />
+        <AssociationConnector Association="TageerModel.FK_AdDirectFieldDetails_Provinces" />
+        <AssociationConnector Association="TageerModel.FK_AdFavorites_Ads" />
+        <AssociationConnector Association="TageerModel.FK_AdFavorites_Users" />
+        <AssociationConnector Association="TageerModel.FK_AdGroupsDetails_Ads" />
+        <AssociationConnector Association="TageerModel.FK_AdGroupsDetails_Groups" />
+        <AssociationConnector Association="TageerModel.FK_AdGroupsDetails_GroupsItems" />
+        <AssociationConnector Association="TageerModel.FK_AdIndividualFieldsDetails_Ads" />
+        <AssociationConnector Association="TageerModel.FK_AdIndividualFieldsDetails_IndividualFields" />
+        <AssociationConnector Association="TageerModel.FK_Ads_Albums" />
+        <AssociationConnector Association="TageerModel.FK_Ads_Categories" />
+        <AssociationConnector Association="TageerModel.FK_Ads_RentalTimesTypes" />
+        <AssociationConnector Association="TageerModel.FK_Ads_SubCategories" />
+        <AssociationConnector Association="TageerModel.FK_Ads_Users" />
+        <AssociationConnector Association="TageerModel.FK_AdsGroupsItems_Categories" />
+        <AssociationConnector Association="TageerModel.FK_GroupsFieldsDisplayTypes_Categories" />
+        <AssociationConnector Association="TageerModel.FK_RentalCategories_RentalCategories" />
+        <AssociationConnector Association="TageerModel.FK_RentalCategories_RentalType" />
+        <AssociationConnector Association="TageerModel.FK_RentalCategoryInputs_RentalTypes" />
+        <AssociationConnector Association="TageerModel.FK_RentalCategoryMarks_RentalTypes" />
+        <AssociationConnector Association="TageerModel.FK_RentalCategoryMaterial_RentalTypes" />
+        <AssociationConnector Association="TageerModel.FK_RentalDirectFields_Categories" />
+        <AssociationConnector Association="TageerModel.FK_RentalTypes_Files" />
+        <AssociationConnector Association="TageerModel.FK_RentalDirectFields_DirectFields" />
+        <AssociationConnector Association="TageerModel.FK_GroupFields_Groups" />
+        <AssociationConnector Association="TageerModel.FK_GroupFieldsDisplayTypes_Groups" />
+        <AssociationConnector Association="TageerModel.FK_GroupsFieldsDisplayTypes_InputsTypes" />
+        <AssociationConnector Association="TageerModel.FK_GroupsFieldsDisplayTypes_SubCategories" />
+        <AssociationConnector Association="TageerModel.FK_RentalGroupFields_GroupFields" />
+        <AssociationConnector Association="TageerModel.FK_Inputs_InputsTypes" />
+        <AssociationConnector Association="TageerModel.FK_RentalInputs_AdsInputs" />
+        <AssociationConnector Association="TageerModel.FK_RentalDirectFields_SubCategories" />
+        <AssociationConnector Association="TageerModel.FK_AdsGroupsItems_SubCategories" />
+        <AssociationConnector Association="TageerModel.FK_CategoryInputs_RentalCategories" />
+        <AssociationConnector Association="TageerModel.FK_RentalMarks_Marks" />
+        <AssociationConnector Association="TageerModel.FK_RentalMarks_RentalCategories" />
+        <AssociationConnector Association="TageerModel.FK_RentalMaterial_RentalCategories" />
+        <AssociationConnector Association="TageerModel.FK_RentalMaterials_Materials" />
+        <AssociationConnector Association="TageerModel.FK_RentalCategories_Files" />
+        <AssociationConnector Association="TageerModel.FK_Companies_Activities" />
+        <AssociationConnector Association="TageerModel.FK_Addresses_Countries" />
+        <AssociationConnector Association="TageerModel.FK_Addresses_Provinces" />
+        <AssociationConnector Association="TageerModel.FK_CompanyOffices_Addresses" />
+        <AssociationConnector Association="TageerModel.FK_Users_Addresses" />
+        <AssociationConnector Association="TageerModel.FK_AlbumFiles_Albums" />
+        <AssociationConnector Association="TageerModel.FK_AlbumFiles_Files" />
+        <AssociationConnector Association="TageerModel.FK_AppsInformation_AllFiles" />
+        <AssociationConnector Association="TageerModel.FK_Countries_Files" />
+        <AssociationConnector Association="TageerModel.FK_Files_FileTypes" />
+        <AssociationConnector Association="TageerModel.FK_Users_Files" />
+        <AssociationConnector Association="TageerModel.FK_ChatMessages_Chats" />
+        <AssociationConnector Association="TageerModel.FK_ChatMessages_Users" />
+        <AssociationConnector Association="TageerModel.FK_Companies_Users" />
+        <AssociationConnector Association="TageerModel.FK_CompanyOffices_Companies" />
+        <AssociationConnector Association="TageerModel.FK_CompanyOffices_Locations" />
+        <AssociationConnector Association="TageerModel.FK_Cities_Countries" />
+        <AssociationConnector Association="TageerModel.FK_Users_Genders" />
+        <AssociationConnector Association="TageerModel.FK_Users_LanguageTypes" />
+        <AssociationConnector Association="TageerModel.FK_SubMenu_Menu" />
+        <AssociationConnector Association="TageerModel.FK_Notifications_Pages" />
+        <AssociationConnector Association="TageerModel.FK_UsersPrivateNotifies_Notifications" />
+        <AssociationConnector Association="TageerModel.FK_PagesManagement_PagesManagement" />
+        <AssociationConnector Association="TageerModel.FK_PagesRoles_Pages" />
+        <AssociationConnector Association="TageerModel.FK_SubMenu_Pages" />
+        <AssociationConnector Association="TageerModel.FK_PagesManagement_Seo" />
+        <AssociationConnector Association="TageerModel.FK_PagesRoles_Users" />
+        <AssociationConnector Association="TageerModel.FK_UserRoles_Roles" />
+        <AssociationConnector Association="TageerModel.FK_UserLogins_Users" />
+        <AssociationConnector Association="TageerModel.FK_UserRoles_Users" />
+        <AssociationConnector Association="TageerModel.FK_UsersPrivateNotifies_Users" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

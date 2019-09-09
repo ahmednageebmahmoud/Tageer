@@ -1,0 +1,212 @@
+﻿
+@{
+    ViewBag.Title = Token.Users;
+    ViewBag.Description = Token.ThisPageFor + " " + Token.Display
+        + " " + Token.AndChar + " "
+        + Token.Update + " "
+        + " " + Token.AndChar + " "
+        + Token.Delete + " "
+        + Token.For + " " + Token.Users;
+
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!--Body-->
+<div ng-app="ngApp" ng-controller="ctrlUsers">
+    <div class="">
+        <!-- BEGIN SAMPLE TABLE PORTLET-->
+        <div class="portlet">
+            <div class="portlet-title">
+                <div class="caption">
+                    <i class="fas fa-bell-o"></i>@Token.Table : @Token.Users
+                </div>
+                <div class="tools">
+                    <a href="javascript:;" class="collapse" data-original-title="@Token.Collapse" title="@Token.Collapse"> </a>
+                    <a class="reload" data-original-title="@Token.ReloadData" title="@Token.ReloadData" ng-click="callFunctions(Country.FkCountry_Id)"> </a>
+                    <a href="javascript:;" class="remove" data-original-title="@Token.Delete" title="@Token.Delete"> </a>
+                </div>
+            </div>
+
+            <div class="portlet-body" style="display: block;">
+                <div class="table-scrollable">
+
+                    <!--Form Add New And Show And Update-->
+                    <form name="frmCUsersFilter" novalidate>
+                        <br />
+                        <div class="form-group col-lg-4 col-md-4">
+                            <label>@Token.Role</label>
+                            <select class="form-control cursorPointer" ng-model="usersFilter.accountTypeId">
+                                <option value="@RoleEnumVM.Manager">@Token.Manager</option>
+                                <option value="@RoleEnumVM.Supervisor">@Token.Supervisor</option>
+                                <option value="@RoleEnumVM.Client">@Token.Client</option>
+                                <option value="@RoleEnumVM.Company">@Token.Company</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-lg-4 col-md-4">
+                            <label>@Token.Countries</label>
+                            <select class="form-control cursorPointer" ng-model="usersFilter.countryId" ng-options="co.Id as co.CountryName for co in countries"></select>
+                        </div>
+
+
+                        <div class="form-group col-lg-4 col-md-4">
+                            <label>@Token.IsBlock</label>
+                            <select class="form-control cursorPointer" ng-model="usersFilter.isBlock">
+                                <option value="null">@Token.ViewAll</option>
+                                <option value="true">@Token.Blocked</option>
+                                <option value="false">@Token.UnBlock</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group col-lg-4 col-md-4">
+                            <label>@Token.CreateDateFrom</label>
+                            <input type="date" class="form-control" name="createDateFrom" ng-model="usersFilter.createDateFrom" />
+                            <label class="lableErorr" ng-show="frmCUsersFilter.CreateDateFrom.$invalid">@Token.InvalidDate</label>
+                        </div>
+
+                        <div class="form-group col-lg-4 col-md-4">
+                            <label>@Token.CreateDateTo</label>
+                            <input type="date" class="form-control" name="createDateTo" ng-model="usersFilter.createDateTo" />
+                            <label class="lableErorr" ng-show="frmCUsersFilter.createDateTo.$invalid">@Token.InvalidDate</label>
+                        </div>
+
+                        <div class="form-group col-lg-4 col-md-4">
+                            <br />
+                            <a href="javascript:;" data-repeater-create="" class="btn  mt-repeater-add"
+                               ng-class="{'btn-success':frmCUsersFilter.$valid}"
+                               ng-click="frmCUsersFilter.$valid?getUsers(true):null">
+                                <i class="fas fa-search"></i> @Token.Show
+                            </a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <!--Div Form Table-->
+            <div class="portlet-body" style="display: block;">
+                <div class="table-scrollable">
+                    <!--Form Add New And Show And Update-->
+                    <div class="">
+                        <table class="table table-striped table-bordered table-advance table-hover" ng-fop-data="users" ng-fop-data-repeat="usersRepeat">
+                            <thead>
+                                <tr>
+                                    <th class="th-10">
+                                        <ng-fop ng-fop-filter="true"
+                                                ng-fop-order-by="true"
+                                                ng-fop-class-icon="fas fa-pencil-alt"
+                                                ng-fop-label="@Token.UserName"
+                                                ng-fop-placeholder="@Token.Search..."
+                                                ng-fop-model="UserName"
+                                                ng-fop-type-filter="text"></ng-fop>
+                                    </th>
+                                    <th class="th-10">
+                                        <ng-fop ng-fop-filter="true"
+                                                ng-fop-order-by="true"
+                                                ng-fop-class-icon="fas fa-pencil-alt"
+                                                ng-fop-label="@Token.Email"
+                                                ng-fop-placeholder="@Token.Search..."
+                                                ng-fop-model="Email"
+                                                ng-fop-type-filter="text"></ng-fop>
+                                    </th>
+                                    <th class="th-10">
+                                        <ng-fop ng-fop-filter="true"
+                                                ng-fop-order-by="true"
+                                                ng-fop-class-icon="fas fa-pencil-alt"
+                                                ng-fop-label="@Token.Phone"
+                                                ng-fop-placeholder="@Token.Search..."
+                                                ng-fop-model="PhoneNumber"
+                                                ng-fop-type-filter="text"></ng-fop>
+                                    </th>
+                                    <th class="th-10">
+                                        <ng-fop ng-fop-filter="true"
+                                                ng-fop-order-by="true"
+                                                ng-fop-class-icon="fas fa-pencil-alt"
+                                                ng-fop-label="@Token.Country"
+                                                ng-fop-placeholder="@Token.Search..."
+                                                ng-fop-model="Country"
+                                                ng-fop-type-filter="text"></ng-fop>
+                                    </th>
+                                    <th class="th-10">
+                                        <ng-fop ng-fop-filter="true"
+                                                ng-fop-order-by="true"
+                                                ng-fop-class-icon="fas fa-pencil-alt"
+                                                ng-fop-label="@Token.CreateDateTime"
+                                                ng-fop-placeholder="@Token.Search..."
+                                                ng-fop-model="CreateDate"
+                                                ng-fop-type-filter="text"></ng-fop>
+                                    </th>
+                                    <th class="th-10">
+                                        <ng-fop ng-fop-filter="false"
+                                                ng-fop-order-by="false"
+                                                ng-fop-requierd="false"
+                                                ng-fop-class-icon="fas fa-pencil-alt"
+                                                ng-fop-label="@Token.ImageProfile"
+                                                ng-fop-placeholder="@Token.Search..."
+                                                ng-fop-model="Image"
+                                                ng-fop-type-filter="text"></ng-fop>
+                                    </th>
+                                    <th class="th-10">
+                                        <ng-fop ng-fop-filter="false"
+                                                ng-fop-order-by="false"
+                                                ng-fop-class-icon="fas fa-pencil-alt"
+                                                ng-fop-label="@Token.Blocked"
+                                                ng-fop-placeholder="@Token.Search..."
+                                                ng-fop-model="Block"
+                                                ng-fop-type-filter="bool"></ng-fop>
+                                    </th>
+                                    <th class="th-10">
+                                        <a href="/Users/CreateandUpdate" class="btn btn-default green-stripe">
+                                            <i class="fas fa-plus"></i>
+                                            @Token.CreateNewUser
+                                        </a>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="x in usersRepeat track by $index">
+                                    <td>{{x.UserName}}</td>
+                                    <td>{{x.Email}}</td>
+                                    <td>{{x.PhoneNumber}}</td>
+                                    <td>
+                                        {{x.Country}}
+                                    </td>
+                                    <td>{{x.CreateDate}}</td>
+                                    <td><img class="cursor-pointer" src="{{x.Image}}" width="100" height="100" /></td>
+                                    <td><i class="fa fa-check" ng-show="x.Block"></i></td>
+                                    <td>
+                                        <a class="cursor-pointer" href="/Users/CreateAndUpdate?userId={{x.Id}}">
+                                            <i class="fas fa-edit icont-controller" title="@Token.Update" data-placement="top" data-toggle="tooltip"></i>
+                                        </a>
+                                        <a class="cursor-pointer" ng-click="delete(x.Id,$index)">
+                                            <i class="fas fa-trash icont-controller" title="@Token.Delete" data-placement="top" data-toggle="tooltip"></i>
+                                        </a>
+                                        <a class="cursor-pointer" href="~/Ads?userId={{x.Id}}">
+                                            <i class="icon-loop icont-controller" title="@Token.UserAds"></i>
+                                        </a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td colspan="{{(usersFilter.accountTypeId == rolesEnum.Office||usersFilter.accountTypeId == rolesEnum.Sponsor)?9:7}}">
+                                        <!--Paging-->
+                                        <ng-paging-display-more ng-paging-count-item="10"></ng-paging-display-more>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- END SAMPLE TABLE PORTLET-->
+    </div>
+</div>
+
+
+
+
+@section scripts{
+    <script src="~/Scripts/Angular/Views/Users/Service.js"></script>
+    <script src="~/Scripts/Angular/Views/Users/Controller.js"></script>
+}
+

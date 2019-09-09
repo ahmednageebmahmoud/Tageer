@@ -1,0 +1,153 @@
+﻿
+@{
+    ViewBag.Title = Token.RentalGroupsItems;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var priv = PageService.GetPageRole(PageEnumVM.RentalGroupsItems);
+    ViewBag.Description = Token.ThisPageFor + Token.Display + " " + Token.AndChar + " " + Token.Added + " " + Token.AndChar + " " + Token.Edit + " " + Token.AndChar + " " + Token.Delete + " " + Token.For + " " + Token.RentalGroupsItems;
+
+}
+<!--body-->
+
+@if (priv.IsDisplay)
+{
+    <div ng-app="ngApp" ng-controller="ctrlRentalGroupsItems" ng-init="errorDuplicate='@Token.CanNotDuplicate';NotNotFoundDataForSaved='@Token.NotNotFoundDataForSaved';warning='@Token.Warning'">
+        <div class="">
+            <pre class="alert alert-info">
+فى هذة الصفحة نحدد ماذا سوف يطلب دخولة من حقول المجموعات مع كلا من التصنيف الرئيسى او التصنيف الفرعى
+            </pre>
+            <!-- BEGIN SAMPLE TABLE PORTLET-->
+            <div class="portlet">
+                <div class="portlet-title">
+                    <div class="caption">
+                        <i class="fa fa-bell-o"></i>@Token.RentalGroupsItems @Token.Table
+                    </div>
+                    <div class="tools">
+                        <a href="javascript:;" class="collapse" data-original-title="@Token.Collapse" title="@Token.Collapse"> </a>
+                        <a class="reload" data-original-title="@Token.ReloadData" title="@Token.ReloadData" ng-click="CallFunctions(RentalGroupsItem.FKSubCategory_Id)"> </a>
+                        <a href="javascript:;" class="remove" data-original-title="@Token.Remove" title="@Token.Remove"> </a>
+                    </div>
+                </div>
+                <!--Div Form Table-->
+                <div class="portlet-body" style="display: block;">
+                    <div class="table-scrollable">
+                        <br />
+
+                        <!--Form Add New And Show And Edit-->
+                        <form name="frmRentalGroupsItem" novalidate>
+
+                            <!--Setting-->
+                            <div class="col-lg-12 col-md-12">
+                                <!--Categories-->
+                                <div class="form-group col-lg-3 col-md-3">
+                                    <label class="control-label"> @Token.Category <label class="lableErorr">*</label> </label>
+                                    <select class="form-control cursor-pointer" name="rentalType" ng-model="RentalGroupsItem.FKCategory_Id" ng-options="x.Id as x.CategoryName for x in Categories| orderBy :'+CategoryName'" ng-required="true"></select>
+                                    <label class="lableErorr" ng-show="frmRentalGroupsItem.rentalType.$error.required&&IsSubmit">@Token.FiledIsRequired</label>
+                                </div>
+
+                                <!--Sub Category-->
+                                <div class="form-group col-lg-3 col-md-3">
+                                    <label class="control-label display-block"> @Token.SubCategory </label>
+                                    <div class="icon-addon addon-sm">
+                                        <select class="form-control cursor-pointer" name="rentalCategory" ng-model="RentalGroupsItem.FKSubCategory_Id" ng-options="x.Id as x.SubCategoryName for x in SubCategories|filter:{'FKCategory_Id':RentalGroupsItem.FKCategory_Id}| orderBy :'+SubCategoryName'"></select>
+                                        <label ng-hide="RentalGroupsItem.FKSubCategory_Id != null" for="txt2" class="glyphicon glyphicon-search" rel="tooltip"></label>
+                                        <label ng-show="RentalGroupsItem.FKSubCategory_Id != null" class="glyphicon glyphicon-remove-circle " ng-click="RentalGroupsItem.FKSubCategory_Id=null"></label>
+                                    </div>
+                                </div>
+
+
+                                <!--Display-->
+                                <div class="form-group col-lg-3 col-md-3">
+                                    <br />
+                                    <a class="btn btn-default   red-stripe" ng-click="GetRentalGroupsItems()">
+                                        @Token.Display
+                                        <i class="fa fa-search"></i>
+                                    </a>
+                                </div>
+
+                                <!--Save Change-->
+                                <div class="form-group col-lg-3 col-md-3">
+                                    <br />
+                                    <a class="btn btn-default green-stripe  " ng-click="SaveChenage()">
+                                        @Token.SaveChange
+                                        <i class="fa fa-save"></i>
+                                    </a>
+                                </div>
+
+                            </div>
+
+
+                            <!--RentalGroupsItemss & rental Category-->
+                            <div class="col-lg-12 col-md-12">
+                                <div class="col-lg-6 col-md-6">
+                                    <!--Titel-->
+                                    <div>
+                                        <label>@Token.RentalGroupsItems :- </label>
+                                    </div>
+                                    <!--List-->
+                                    <div>
+
+                                        <ul class="list-group">
+                                            <li class="list-group-item active">
+                                                <div class="icon-addon addon-sm" style="width:100%">
+                                                    <select class="form-control cursorPointer" ng-model="GroupName" ng-options="x.GroupName as x.GroupName for x in Groups|orderBy: 'GroupName'"></select>
+                                                    <label ng-hide="GroupName != null" for="txt2" class="glyphicon glyphicon-search" rel="tooltip"></label>
+                                                    <label ng-show="GroupName != null" class="glyphicon glyphicon-remove-circle " ng-click="GroupName=null"></label>
+                                                </div>
+                                                <input type="text" class="form-control" ng-model="SearchRentalGroupsItems" placeholder="@Token.Items..." />
+                                            </li>
+                                            <li class="list-group-item cursorPointer" ng-repeat="x in AllRentalGroupsItem|filter :{'GroupName':SearchRentalGroupsItems,'GroupName':GroupName}|filterIsEquals:'State':State.Delete:0| orderBy :'+GroupItemName'" ng-click="RentalGroupsItemChangeState(x)">{{x.GroupItemName}} <i class="fas fa-trash faRed" ng-show="x.State==State.Delete"></i></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-6">
+                                    <!--Titel-->
+                                    <div>
+                                        <label>@Token.FieldsSelected :- </label>
+                                    </div>
+
+                                    <!--List-->
+                                    <div>
+                                        <ul class="list-group">
+                                            <li class="list-group-item active"><input type="text" class="form-control" ng-model="SearchRentalGroupsItem" placeholder="@Token.Items..." /></li>
+                                            <li class="list-group-item  " ng-repeat="x in AllRentalGroupsItem|filter :{'GroupItemName':SearchRentalGroupsItem} |filterIsEquals:'State':State.Old:State.Create:State.Update| orderBy :'+GroupItemName'">
+
+                                                <label class="cursorPointer" ng-click="RentalGroupsItemChangeState(x)">
+                                                    {{x.GroupItemName }}
+                                                    <i class="fas fa-plus-circle faGreen" ng-show="x.State==State.Create"></i>
+                                                    <i class="fas fa-edit faOrange" ng-show="x.State==State.Update"></i>
+                                                </label>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+            <!-- END SAMPLE TABLE PORTLET-->
+
+
+
+
+        </div>
+        <pre ng-show="false">{{RentalGroupsItem|json}}</pre>
+        <pre ng-show="false">{{AllRentalGroupsItem|json:4}}</pre>
+
+    </div>
+}
+else
+{
+    <h1 class="lableErorr text-center">
+        <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
+        @Token.CanNotDisplay
+    </h1>
+}
+@section scripts{
+    <script src="~/Scripts/Angular/Views/RentalGroupsItems/Service.js"></script>
+    <script src="~/Scripts/Angular/Views/RentalGroupsItems/ControllerJs.js"></script>
+}
+

@@ -1,0 +1,338 @@
+/* Extra Small */
+@media only screen and (min-width: 320px)and (max-width: 767px ) {
+    .btn-primary {
+        width: 140px;
+    }
+
+    .top-header {
+        background: #fff;
+        padding: 10px 0;
+    }
+
+    .top-header .navbar-header {
+        border-bottom: 1px solid #eee;
+    }
+
+    .top-header ul {
+        text-align: center;
+    }
+
+    .top-header ul li:first-of-type {
+        width: 100%;
+    }
+
+    .top-header .btn-primary {
+        margin-top: 10px;
+    }
+
+    .modal-header .close {
+        left: 0;
+        line-height: 30px;
+        padding: 0 5px;
+    }
+
+    .navbar-default .navbar-nav > li > a {
+        padding: 15px 30px;
+    }
+
+    .navbar-default .navbar-nav > li > a > i.big-icon-menu,
+    .navbar-default .navbar-nav > li > a > img.menu-icons {
+        display: inline-block !important;
+        text-align: right !important;
+        margin-bottom: 0 !important;
+        margin-left: 10px !important;
+    }
+
+    .navbar-nav {
+        margin: 0;
+    }
+
+    .navbar-default .navbar-nav > li > a.btn-primary {
+        margin-top: 0;
+        margin-bottom: 10px;
+    }
+
+    nav.affix.navbar-default {
+        position: relative;
+    }
+
+    .navbar-default .navbar-nav .open .dropdown-menu > li > a {
+        color: #777;
+        padding: 15px 60px;
+        background: #fff;
+    }
+
+    .sort-posts ul {
+        width: 100%;
+        text-align: center;
+    }
+
+
+
+    .sort-posts a {
+        margin: 0 8px;
+    }
+
+    .sort-posts > ul > li{
+        margin-bottom: 10px;
+    }
+
+    .sort-posts > ul > li::after{
+        width: 0;
+    }
+
+    .post .post-img img,
+    .post.post-width .post-img img {
+        height: 190px;
+        border-bottom-right-radius: 0;
+        border-bottom-left-radius: 0;
+    }
+
+    .post .post-head {
+        border-radius: 0;
+    }
+
+    .post .post-head ul li {
+        margin-right: 10px;
+    }
+
+    .post .post-footer i.icon,
+    .post .post-footer img {
+        display: block !important;
+        text-align: center !important;
+        margin: 0 !important;
+    }
+
+    .post .post-footer img {
+        margin: 0 auto !important;
+    }
+
+    .filter-sidebar {
+        position: relative !important;
+        z-index: 9;
+        top: auto !important;
+        margin-left: auto !important;
+        width: 100% !important;
+        left: auto !important;
+    }
+
+    .filter-sidebar + div {
+        height: 0 !important;
+    }
+
+    .ui-selectmenu-open {
+        left: 60px !important;
+    }
+
+    footer h3.footer-title {
+        margin: 30px 0;
+    }
+
+    .copyright {
+        text-align: center;
+    }
+
+    .copyright ul {
+        text-align: center;
+        margin-top: 15px;
+    }
+
+    /*Bages*/
+    .mob-m-b-30 {
+        margin-bottom: 30px;
+    }
+
+    .file-upload-input {
+        width: 60%
+    }
+
+    .file-upload-button {
+        width: 40%;
+    }
+
+    .message-page-inside {
+        height: auto;
+    }
+
+    .main-product-info .main-product-info-head a.post-like {
+        display: inline-block;
+        float: none !important;
+        margin-bottom: 20px;
+    }
+
+    .main-product-info .main-product-info-head h1.price {
+        float: none !important;
+        margin-top: 30px;
+        text-align: right;
+    }
+
+    .info-list li {
+        border: 1px solid #A3A3A3 !important;
+        text-align: center;
+        width: 49%;
+    }
+
+    .range-input {
+        width: 70% !important;
+    }
+
+    .range-input-container p {
+        width: 30%;
+    }
+
+    .user-profile-links {
+        border-radius: 0;
+        padding: 0 15px;
+        margin-top: 0;
+    }
+
+    .add-ads-page-content .nav-tabs {
+        margin-bottom: 30px;
+    }
+
+    .main-product-info .main-product-info-head h4 {
+        float: none !important;
+    }
+
+    .right-side, .left-side{
+        margin-bottom: 15px;
+    }
+
+    .info-list {
+        display: inline-table;
+    }
+
+    .post-main-tab .post-price-head,
+    .post.post-width .post-head{
+        width: 100%;
+        height: auto;
+    }
+    .post.post-width .post-head ul li{
+        margin: 0;
+    }
+    .post.post-width .post-head ul,
+    .post .post-head ul li:last-of-type{
+        float: none !important
+    }
+    .post-main-tab .post-price-head h1{
+        margin-top: 0;
+        text-align: right;
+        margin-right: 15px;
+        float: right;
+    }
+    .post-main-tab .post-price-head a.btn{
+        float: left;
+        width: auto;
+        padding: 0 5px;
+        margin-bottom: 15px;
+        margin-left: 15px;
+    }
+    .post-main-tab .post-price-head h1{
+        font-size: 18px;
+        margin: 10px 15px !important;
+    }
+    .main-product-info .main-product-info-head .right-side ul li{
+        margin-bottom: 5px;
+    }
+    .left-side a.btn-primary{
+        font-size: 14px !important;
+    }
+    .left-side a.btn-primary:last-of-type{
+        width: 100% !important;
+        float: none !important;
+    }
+    .post.post-width .post-footer {
+        width: 100%;
+    }
+    .post.post-width.post-main-tab .post-price-head {
+        padding-top: 0;
+    }
+
+    .post-main-tab.post-second .post-price-head,
+    .post-main-tab.post-second .post-head{
+        width: 100% !important;
+    }
+    .post.post-second{
+        margin-top: 30px;
+    }
+}
+
+/* Small */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+    .top-header .btn-primary {
+        width: 110px;
+    }
+
+    .top-header ul li a img {
+        width: 110px;
+    }
+
+    .affix {
+        position: relative;
+    }
+
+    .navbar-default .navbar-nav > li > a {
+        padding: 15px 5px;
+    }
+
+    .navbar-default .navbar-nav .btn-primary {
+        width: 120px;
+    }
+
+    .add-ads-page-content .nav-tabs {
+        margin-bottom: 30px;
+    }
+
+    .main-product-info .main-product-info-head h4 {
+        float: none !important;
+    }
+
+    .main-product-info .main-product-info-head .left-info-single-ads a {
+        width: 45%;
+        margin: 5px;
+    }
+
+    .info-list {
+        display: inline-table;
+    }
+
+    .sort-posts a{
+        margin: 0 5px;
+    }
+    .post-main-tab .post-price-head a.btn{
+        width: auto;
+        padding: 0 5px;
+    }
+    .post-main-tab .post-price-head h1{
+        font-size: 18px;
+    }
+    .post.post-width .post-head ul,
+    .post .post-head ul li:last-of-type{
+        float: none !important
+    }
+}
+
+/* Medium */
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+    .navbar-default .navbar-nav > li > a {
+        padding: 30px 15px;
+    }
+
+    .ui-selectmenu-open {
+        left: 735px !important;
+    }
+    .post-main-tab .post-price-head a.btn{
+        width: auto;
+        padding: 0 5px;
+    }
+    .post.post-width .post-head ul,
+    .post .post-head ul li:last-of-type{
+        float: none !important
+    }
+
+
+}
+
+/* Large */
+@media (min-width: 1200px) {
+}

@@ -1,0 +1,200 @@
+﻿
+@{
+    ViewBag.Title = Token.EmailsSubscriptions;
+    ViewBag.Description = Token.ThisPageFor + " " + Token.Display
+        + " " + Token.AndChar + " "
+        + Token.Update + " "
+        + " " + Token.AndChar + " "
+        + Token.Delete + " "
+        + Token.For + " " + Token.EmailsSubscriptions;
+
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!--Body-->
+<div ng-app="ngApp" ng-controller="ctrlEmailsSubscriptions">
+    
+
+    <div class="">
+        <!-- BEGIN SAMPLE TABLE PORTLET-->
+        <div class="portlet">
+            <div class="portlet-title">
+                <div class="caption">
+                    <i class="fas fa-bell-o"></i>@Token.Table : @Token.EmailsSubscriptions
+                </div>
+                <div class="tools">
+                    <a href="javascript:;" class="collapse" data-original-title="@Token.Collapse" title="@Token.Collapse"> </a>
+                    <a class="reload" data-original-title="@Token.ReloadData" title="@Token.ReloadData" ng-click="callFunctions(Country.FkCountry_Id)"> </a>
+                    <a href="javascript:;" class="remove" data-original-title="@Token.Delete" title="@Token.Delete"> </a>
+                </div>
+            </div>
+
+            <div class="portlet-body" style="display: block;">
+                <div class="table-scrollable">
+
+                    <!--Form Add New And Show And Update-->
+                    <form name="frmCEmailsSubscriptionsFilter" novalidate   ng-submit="frmCEmailsSubscriptionsFilter.$valid?getEmailsSubscriptions(true):null">
+                        <br />
+                        <div class="form-group col-lg-4 col-md-4">
+                            <label>@Token.Email</label>
+                            <input type="text" class="form-control cursorPointer" ng-model="emailsSubscriptionsFilter.emailSearch" />
+                        </div>
+                        <div class="form-group col-lg-4 col-md-4">
+                            <label>@Token.CreateDateFrom</label>
+                            <input type="date" class="form-control" name="createDateFrom" ng-model="emailsSubscriptionsFilter.createDateFrom" />
+                            <label class="lableErorr" ng-show="frmCEmailsSubscriptionsFilter.CreateDateFrom.$invalid">@Token.InvalidDate</label>
+                        </div>
+
+                        <div class="form-group col-lg-4 col-md-4">
+                            <label>@Token.CreateDateTo</label>
+                            <input type="date" class="form-control" name="createDateTo" ng-model="emailsSubscriptionsFilter.createDateTo" />
+                            <label class="lableErorr" ng-show="frmCEmailsSubscriptionsFilter.createDateTo.$invalid">@Token.InvalidDate</label>
+                        </div>
+
+                        <div class="form-group col-lg-4 col-md-4">
+                            <br />
+                            <a href="javascript:;" data-repeater-create="" class="btn  btn-default mt-repeater-add"
+                               ng-class="{'btn-success':frmCEmailsSubscriptionsFilter.$valid}"
+                               ng-click="frmCEmailsSubscriptionsFilter.$valid?getEmailsSubscriptions(true):null">
+                                <i class="fas fa-search"></i> @Token.Show
+                            </a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <!--Div Form Table-->
+            <div class="portlet-body" style="display: block;">
+                <div class="row">
+                    <div class="col-md-12">
+                        <!-- BEGIN EXTRAS PORTLET-->
+                        <div class="portlet box green">
+                            <div class="portlet-title">
+                                <div class="caption">
+                                    <i class="glyphicon glyphicon-envelope"></i>@Token.EmailMessage
+                                </div>
+                                <div class="tools">
+                                    <a href="javascript:;" class="collapse"> </a>
+                                    <a href="#portlet-config" data-toggle="modal" class="config"> </a>
+                                    <a href="javascript:;" class="reload"> </a>
+                                    <a href="javascript:;" class="remove"> </a>
+                                </div>
+                            </div>
+                            <div class="portlet-body form">
+                                <!-- BEGIN FORM-->
+                                <form   class="form-horizontal form-bordered" novalidate name="messageFrm">
+                                    <div class="form-body">
+                                        <div class="form-group last">
+                                            <label class="control-label col-md-2">@Token.Subject</label>
+                                            <div class="col-md-10">
+                                                <input type="text" class="form-control min-width-100-important" name="subject" ng-model="emailMessage.Subject" 
+                                                       maxlength="50"
+                                                        ng-required="true"/>
+                                       <span class="lableErorr" ng-show="messageFrm.subject.$invalid&&isSubmit">@Token.FiledIsRequired</span>
+                                                 </div>
+                                        </div>
+                                        <div class="form-group last">
+                                            <label class="control-label col-md-2">@Token.Message</label>
+                                            <div class="col-md-10">
+                                                <textarea class="ckeditor form-control" name="message" rows="6" ng-required="true"></textarea>
+                                                <span class="lableErorr" ng-show="messageFrm.message.$invalid&&isSubmit">@Token.FiledIsRequired</span>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group last">
+                                            <label class="control-label col-md-2">@Token.TargetEmails</label>
+                                            <div class="col-md-10">
+                                                <div class="table-scrollable">
+                                                    <!--Form Add New And Show And Update-->
+                                                    <div class="">
+                                                        <table class="table table-striped    table-advance table-hover" ng-fop-data="emailsSubscriptions" ng-fop-data-repeat="emailsSubscriptionsRepeat">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th class="th-45">
+                                                                        <ng-fop ng-fop-filter="true"
+                                                                                ng-fop-order-by="true"
+                                                                                ng-fop-class-icon="fas fa-pencil-alt"
+                                                                                ng-fop-label="@Token.Email"
+                                                                                ng-fop-placeholder="@Token.Search..."
+                                                                                ng-fop-model="Email"
+                                                                                ng-fop-type-filter="text"></ng-fop>
+                                                                    </th>
+                                                                    <th class="th-45">
+                                                                        <ng-fop ng-fop-filter="true"
+                                                                                ng-fop-order-by="true"
+                                                                                ng-fop-class-icon="fas fa-pencil-alt"
+                                                                                ng-fop-label="@Token.CreateDateTime"
+                                                                                ng-fop-placeholder="@Token.Search..."
+                                                                                ng-fop-model="CreatedDate"
+                                                                                ng-fop-type-filter="text"></ng-fop>
+                                                                    </th>
+                                                                    <th class="th-10">
+                                                                        <a href="javascript:;" class="btn blue" ng-click="selectAll()">
+                                                                            <i class="fa fa-check"></i> @Token.SelectAllEmailInTable
+                                                                        </a>
+                                                                    </th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <tr ng-repeat="x in emailsSubscriptionsRepeat track by $index" ng-click="x.Selected=!x.Selected" class="cursor-pointer" ng-class="{'success':x.Selected}">
+                                                                    <td>{{x.Email}}</td>
+                                                                    <td>{{x.CreatedDate}}</td>
+                                                                    <td >
+                                                                        <label class="mt-checkbox mt-checkbox-outline">
+                                                                            <input type="checkbox"  ng-model="x.Selected">
+                                                                            <span></span>
+                                                                        </label>
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody>
+                                                            <tfoot>
+                                                                <tr>
+                                                                    <td colspan="2">
+                                                                        <!--Paging-->
+                                                                        <ng-paging-display-more ng-paging-count-item="10"></ng-paging-display-more>
+                                                                    </td>
+                                                                    <td></td>
+                                                                </tr>
+                                                            </tfoot>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-actions">
+                                        <div class="row">
+                                            <div class="col-md-offset-11 ">
+                                                <a href="javascript:;" class="btn green" ng-click="messageFrm.$valid?sendMessage():isSubmit=true">
+                                                    <i class="fa fa-check"></i> @Token.SendMail
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                                <!-- END FORM-->
+                            </div>
+                        </div>
+                        <!-- END EXTRAS PORTLET-->
+                    </div>
+                </div>
+
+
+                
+            </div>
+        </div>
+        <!-- END SAMPLE TABLE PORTLET-->
+    </div>
+</div>
+
+
+
+
+@section scripts{
+ 
+    <script src="~/Scripts/Angular/Views/EmailsSubscriptions/Service.js"></script>
+    <script src="~/Scripts/Angular/Views/EmailsSubscriptions/Controller.js"></script>
+
+<script src="~/assets/global/plugins/ckeditor/ckeditor.js" type="text/javascript"></script>
+    
+}
+

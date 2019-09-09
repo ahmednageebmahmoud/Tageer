@@ -1,0 +1,842 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="TageerModelStoreContainer" CdmEntityContainer="TageerEntities">
+    <FunctionImportMapping FunctionImportName="GetAdIndividualFieldsDetails" FunctionName="TageerModel.Store.GetAdIndividualFieldsDetails">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TageerModel.GetAdIndividualFieldsDetails_Result">
+          <ScalarProperty Name="FkIndividualField_Id" ColumnName="FkIndividualField_Id" />
+          <ScalarProperty Name="Value" ColumnName="Value" />
+          <ScalarProperty Name="IndividualFieldsResourcesName" ColumnName="IndividualFieldsResourcesName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetNotificationsByFilter" FunctionName="TageerModel.Store.GetNotificationsByFilter">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TageerModel.GetNotificationsByFilter_Result">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="TitleAr" ColumnName="TitleAr" />
+          <ScalarProperty Name="TitleEn" ColumnName="TitleEn" />
+          <ScalarProperty Name="BodyAr" ColumnName="BodyAr" />
+          <ScalarProperty Name="BodyEn" ColumnName="BodyEn" />
+          <ScalarProperty Name="DataTime" ColumnName="DataTime" />
+          <ScalarProperty Name="IsRead" ColumnName="IsRead" />
+          <ScalarProperty Name="NotificationCount" ColumnName="NotificationCount" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetTechnicalSupports" FunctionName="TageerModel.Store.GetTechnicalSupports">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TageerModel.GetTechnicalSupports_Result">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Subject" ColumnName="Subject" />
+          <ScalarProperty Name="Message" ColumnName="Message" />
+          <ScalarProperty Name="CreateDateTime" ColumnName="CreateDateTime" />
+          <ScalarProperty Name="IsRead" ColumnName="IsRead" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetUserNotifications" FunctionName="TageerModel.Store.GetUserNotifications">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TageerModel.GetUserNotifications_Result">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="TitleAr" ColumnName="TitleAr" />
+          <ScalarProperty Name="TitleEn" ColumnName="TitleEn" />
+          <ScalarProperty Name="DataTime" ColumnName="DataTime" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SelectAdBottomBar" FunctionName="TageerModel.Store.SelectAdBottomBar">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TageerModel.SelectAdBottomBar_Result">
+          <ScalarProperty Name="FkIndividualField_Id" ColumnName="FkIndividualField_Id" />
+          <ScalarProperty Name="AdIndividualFieldValue" ColumnName="AdIndividualFieldValue" />
+          <ScalarProperty Name="IndividualField_ResourcesName" ColumnName="IndividualField_ResourcesName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SelectAdGroupsDetails" FunctionName="TageerModel.Store.SelectAdGroupsDetails">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TageerModel.SelectAdGroupsDetails_Result">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="FKAd_Id" ColumnName="FKAd_Id" />
+          <ScalarProperty Name="FKGroup_Id" ColumnName="FKGroup_Id" />
+          <ScalarProperty Name="FKGroupItem_Id" ColumnName="FKGroupItem_Id" />
+          <ScalarProperty Name="CustomValue" ColumnName="CustomValue" />
+          <ScalarProperty Name="IsCustomValue" ColumnName="IsCustomValue" />
+          <ScalarProperty Name="GroupResourceName" ColumnName="GroupResourceName" />
+          <ScalarProperty Name="GroupsItemName" ColumnName="GroupsItemName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SelectAdsByFilter" FunctionName="TageerModel.Store.SelectAdsByFilter">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TageerModel.SelectAdsByFilter_Result">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="CreateDateTime" ColumnName="CreateDateTime" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="FkCategory_Id" ColumnName="FkCategory_Id" />
+          <ScalarProperty Name="FkSubCategory_Id" ColumnName="FkSubCategory_Id" />
+          <ScalarProperty Name="FKAlbum_Id" ColumnName="FKAlbum_Id" />
+          <ScalarProperty Name="UserCreated_Id" ColumnName="UserCreated_Id" />
+          <ScalarProperty Name="UserCreated_Email" ColumnName="UserCreated_Email" />
+          <ScalarProperty Name="UserCreated_UserName" ColumnName="UserCreated_UserName" />
+          <ScalarProperty Name="Category_NameAr" ColumnName="Category_NameAr" />
+          <ScalarProperty Name="Category_NameEn" ColumnName="Category_NameEn" />
+          <ScalarProperty Name="SubCategory_NameAr" ColumnName="SubCategory_NameAr" />
+          <ScalarProperty Name="SubCategory_NameEn" ColumnName="SubCategory_NameEn" />
+          <ScalarProperty Name="Country_NameAr" ColumnName="Country_NameAr" />
+          <ScalarProperty Name="Country_NameEn" ColumnName="Country_NameEn" />
+          <ScalarProperty Name="Province_NameAr" ColumnName="Province_NameAr" />
+          <ScalarProperty Name="Province_NameEn" ColumnName="Province_NameEn" />
+          <ScalarProperty Name="RentalTimesType_ResourceName" ColumnName="RentalTimesType_ResourceName" />
+          <ScalarProperty Name="CommentsCount" ColumnName="CommentsCount" />
+          <ScalarProperty Name="VisitorsCount" ColumnName="VisitorsCount" />
+          <ScalarProperty Name="FavoritesCount" ColumnName="FavoritesCount" />
+          <ScalarProperty Name="IsFavorite" ColumnName="IsFavorite" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SelectAlbumImages" FunctionName="TageerModel.Store.SelectAlbumImages" />
+    <FunctionImportMapping FunctionImportName="SelectEmailsSubscriptionsByFilter" FunctionName="TageerModel.Store.SelectEmailsSubscriptionsByFilter">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TageerModel.SelectEmailsSubscriptionsByFilter_Result">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="CreateDateTime" ColumnName="CreateDateTime" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SelectUsersByFilter" FunctionName="TageerModel.Store.SelectUsersByFilter" />
+    <FunctionImportMapping FunctionImportName="Users_CheckFromLoginData" FunctionName="TageerModel.Store.Users_CheckFromLoginData" />
+    <FunctionImportMapping FunctionImportName="Users_CheckFromUserNameIsValid" FunctionName="TageerModel.Store.Users_CheckFromUserNameIsValid" />
+    <FunctionImportMapping FunctionImportName="SelectAdDetails" FunctionName="TageerModel.Store.SelectAdDetails">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TageerModel.SelectAdDetails_Result">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="CreateDateTime" ColumnName="CreateDateTime" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="FkCategory_Id" ColumnName="FkCategory_Id" />
+          <ScalarProperty Name="FkSubCategory_Id" ColumnName="FkSubCategory_Id" />
+          <ScalarProperty Name="FKAlbum_Id" ColumnName="FKAlbum_Id" />
+          <ScalarProperty Name="UserCreated_Id" ColumnName="UserCreated_Id" />
+          <ScalarProperty Name="UserCreated_Email" ColumnName="UserCreated_Email" />
+          <ScalarProperty Name="UserCreated_UserName" ColumnName="UserCreated_UserName" />
+          <ScalarProperty Name="UserCreated_PhoneNumber" ColumnName="UserCreated_PhoneNumber" />
+          <ScalarProperty Name="Category_NameAr" ColumnName="Category_NameAr" />
+          <ScalarProperty Name="Category_NameEn" ColumnName="Category_NameEn" />
+          <ScalarProperty Name="SubCategory_NameAr" ColumnName="SubCategory_NameAr" />
+          <ScalarProperty Name="SubCategory_NameEn" ColumnName="SubCategory_NameEn" />
+          <ScalarProperty Name="RentalTimesType_ResourceName" ColumnName="RentalTimesType_ResourceName" />
+          <ScalarProperty Name="Location_Latitude" ColumnName="Location_Latitude" />
+          <ScalarProperty Name="Location_Longitude" ColumnName="Location_Longitude" />
+          <ScalarProperty Name="Country_NameAr" ColumnName="Country_NameAr" />
+          <ScalarProperty Name="Country_NameEn" ColumnName="Country_NameEn" />
+          <ScalarProperty Name="Province_NameAr" ColumnName="Province_NameAr" />
+          <ScalarProperty Name="Province_NameEn" ColumnName="Province_NameEn" />
+          <ScalarProperty Name="Mark_NameAr" ColumnName="Mark_NameAr" />
+          <ScalarProperty Name="Mark_NameEn" ColumnName="Mark_NameEn" />
+          <ScalarProperty Name="Material_NameAr" ColumnName="Material_NameAr" />
+          <ScalarProperty Name="Material_NameEn" ColumnName="Material_NameEn" />
+          <ScalarProperty Name="Nationality_NameAr" ColumnName="Nationality_NameAr" />
+          <ScalarProperty Name="Nationality_NameEn" ColumnName="Nationality_NameEn" />
+          <ScalarProperty Name="Size" ColumnName="Size" />
+          <ScalarProperty Name="Area_Width" ColumnName="Area_Width" />
+          <ScalarProperty Name="Area_Length" ColumnName="Area_Length" />
+          <ScalarProperty Name="Area_Height" ColumnName="Area_Height" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SelectAdComments" FunctionName="TageerModel.Store.SelectAdComments">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TageerModel.SelectAdComments_Result">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Comment" ColumnName="Comment" />
+          <ScalarProperty Name="FKAd_Id" ColumnName="FKAd_Id" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="UserImage" ColumnName="UserImage" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SeelctChatByUserRecivedName" FunctionName="TageerModel.Store.SeelctChatByUserRecivedName">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TageerModel.SeelctChatByUserRecivedName_Result">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="UserFullName" ColumnName="UserFullName" />
+          <ScalarProperty Name="UserImage" ColumnName="UserImage" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SelectLastMessage" FunctionName="TageerModel.Store.SelectLastMessage">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TageerModel.SelectLastMessage_Result">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="DateTime" ColumnName="DateTime" />
+          <ScalarProperty Name="FkChat_Id" ColumnName="FkChat_Id" />
+          <ScalarProperty Name="Message" ColumnName="Message" />
+          <ScalarProperty Name="FkUser_Id" ColumnName="FkUser_Id" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="UserFullName" ColumnName="UserFullName" />
+          <ScalarProperty Name="UserImage" ColumnName="UserImage" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SelectUserChats" FunctionName="TageerModel.Store.SelectUserChats">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TageerModel.SelectUserChats_Result">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="UserFullName" ColumnName="UserFullName" />
+          <ScalarProperty Name="UserImage" ColumnName="UserImage" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SelectMessages" FunctionName="TageerModel.Store.SelectMessages">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TageerModel.SelectMessages_Result">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="DateTime" ColumnName="DateTime" />
+          <ScalarProperty Name="FkChat_Id" ColumnName="FkChat_Id" />
+          <ScalarProperty Name="Message" ColumnName="Message" />
+          <ScalarProperty Name="FkUser_Id" ColumnName="FkUser_Id" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="UserFullName" ColumnName="UserFullName" />
+          <ScalarProperty Name="UserImage" ColumnName="UserImage" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="AdComments">
+      <EntityTypeMapping TypeName="TageerModel.AdComment">
+        <MappingFragment StoreEntitySet="AdComment">
+          <ScalarProperty Name="FkUser_Id" ColumnName="FkUser_Id" />
+          <ScalarProperty Name="FKAd_Id" ColumnName="FKAd_Id" />
+          <ScalarProperty Name="DateTime" ColumnName="DateTime" />
+          <ScalarProperty Name="Comment" ColumnName="Comment" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AdDirectFieldDetails">
+      <EntityTypeMapping TypeName="TageerModel.AdDirectFieldDetail">
+        <MappingFragment StoreEntitySet="AdDirectFieldDetails">
+          <ScalarProperty Name="FkProvince_Id" ColumnName="FkProvince_Id" />
+          <ScalarProperty Name="FkCountry_Id" ColumnName="FkCountry_Id" />
+          <ScalarProperty Name="FKMark_Id" ColumnName="FKMark_Id" />
+          <ScalarProperty Name="FKNationality_Id" ColumnName="FKNationality_Id" />
+          <ScalarProperty Name="FKMatrial_Id" ColumnName="FKMatrial_Id" />
+          <ScalarProperty Name="FKLocation_Id" ColumnName="FKLocation_Id" />
+          <ScalarProperty Name="FKSize_Id" ColumnName="FKSize_Id" />
+          <ScalarProperty Name="FKArea_Id" ColumnName="FKArea_Id" />
+          <ScalarProperty Name="AdId" ColumnName="AdId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AdFavorites">
+      <EntityTypeMapping TypeName="TageerModel.AdFavorite">
+        <MappingFragment StoreEntitySet="AdFavorites">
+          <ScalarProperty Name="FKAd_Id" ColumnName="FKAd_Id" />
+          <ScalarProperty Name="FkUser_Id" ColumnName="FkUser_Id" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AdGroupsDetails">
+      <EntityTypeMapping TypeName="TageerModel.AdGroupsDetail">
+        <MappingFragment StoreEntitySet="AdGroupsDetails">
+          <ScalarProperty Name="FKAd_Id" ColumnName="FKAd_Id" />
+          <ScalarProperty Name="FKGroupItem_Id" ColumnName="FKGroupItem_Id" />
+          <ScalarProperty Name="CustomValue" ColumnName="CustomValue" />
+          <ScalarProperty Name="IsCustomValue" ColumnName="IsCustomValue" />
+          <ScalarProperty Name="FKGroup_Id" ColumnName="FKGroup_Id" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AdIndividualFieldsDetails">
+      <EntityTypeMapping TypeName="TageerModel.AdIndividualFieldsDetail">
+        <MappingFragment StoreEntitySet="AdIndividualFieldsDetails">
+          <ScalarProperty Name="FKAd_Id" ColumnName="FKAd_Id" />
+          <ScalarProperty Name="FkIndividualField_Id" ColumnName="FkIndividualField_Id" />
+          <ScalarProperty Name="Value" ColumnName="Value" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Ads">
+      <EntityTypeMapping TypeName="TageerModel.Ad">
+        <MappingFragment StoreEntitySet="Ads">
+          <ScalarProperty Name="CreateDateTime" ColumnName="CreateDateTime" />
+          <ScalarProperty Name="FkSubCategory_Id" ColumnName="FkSubCategory_Id" />
+          <ScalarProperty Name="FkCategory_Id" ColumnName="FkCategory_Id" />
+          <ScalarProperty Name="FkUser_Id" ColumnName="FkUser_Id" />
+          <ScalarProperty Name="FKAlbum_Id" ColumnName="FKAlbum_Id" />
+          <ScalarProperty Name="FkRentalTimesType_Id" ColumnName="FkRentalTimesType_Id" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Categories">
+      <EntityTypeMapping TypeName="TageerModel.Category">
+        <MappingFragment StoreEntitySet="Categories">
+          <ScalarProperty Name="FKFile_Id" ColumnName="FKFile_Id" />
+          <ScalarProperty Name="NameEn" ColumnName="NameEn" />
+          <ScalarProperty Name="NameAr" ColumnName="NameAr" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DirectFields">
+      <EntityTypeMapping TypeName="TageerModel.DirectField">
+        <MappingFragment StoreEntitySet="DirectFields">
+          <ScalarProperty Name="ResourceName" ColumnName="ResourceName" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Groups">
+      <EntityTypeMapping TypeName="TageerModel.Group">
+        <MappingFragment StoreEntitySet="Groups">
+          <ScalarProperty Name="ResourceName" ColumnName="ResourceName" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GroupsDisplayTypes">
+      <EntityTypeMapping TypeName="TageerModel.GroupsDisplayType">
+        <MappingFragment StoreEntitySet="GroupsDisplayTypes">
+          <ScalarProperty Name="FKCategory_Id" ColumnName="FKCategory_Id" />
+          <ScalarProperty Name="FKSubCategory_Id" ColumnName="FKSubCategory_Id" />
+          <ScalarProperty Name="FKInputType_Id" ColumnName="FKInputType_Id" />
+          <ScalarProperty Name="FKGroup_Id" ColumnName="FKGroup_Id" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GroupsItems">
+      <EntityTypeMapping TypeName="TageerModel.GroupsItem">
+        <MappingFragment StoreEntitySet="GroupsItems">
+          <ScalarProperty Name="FKGroup_Id" ColumnName="FKGroup_Id" />
+          <ScalarProperty Name="ResourceName" ColumnName="ResourceName" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="IndividualFields">
+      <EntityTypeMapping TypeName="TageerModel.IndividualField">
+        <MappingFragment StoreEntitySet="IndividualFields">
+          <ScalarProperty Name="FKInputType_Id" ColumnName="FKInputType_Id" />
+          <ScalarProperty Name="ResourcesName" ColumnName="ResourcesName" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RentalDirectFields">
+      <EntityTypeMapping TypeName="TageerModel.RentalDirectField">
+        <MappingFragment StoreEntitySet="RentalDirectFields">
+          <ScalarProperty Name="FkDirectField_Id" ColumnName="FkDirectField_Id" />
+          <ScalarProperty Name="FkCategory_Id" ColumnName="FkCategory_Id" />
+          <ScalarProperty Name="FkSubCategory_Id" ColumnName="FkSubCategory_Id" />
+          <ScalarProperty Name="IsRequired" ColumnName="IsRequired" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RentalGroupsItems">
+      <EntityTypeMapping TypeName="TageerModel.RentalGroupsItem">
+        <MappingFragment StoreEntitySet="RentalGroupsItems">
+          <ScalarProperty Name="FKCategory_Id" ColumnName="FKCategory_Id" />
+          <ScalarProperty Name="FKGroupsItem_Id" ColumnName="FKGroupsItem_Id" />
+          <ScalarProperty Name="FKSubCategory_Id" ColumnName="FKSubCategory_Id" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RentalIndividualFields">
+      <EntityTypeMapping TypeName="TageerModel.RentalIndividualField">
+        <MappingFragment StoreEntitySet="RentalIndividualFields">
+          <ScalarProperty Name="FKCategory_Id" ColumnName="FKCategory_Id" />
+          <ScalarProperty Name="FkIndividualField_Id" ColumnName="FkIndividualField_Id" />
+          <ScalarProperty Name="FKSubCategory_Id" ColumnName="FKSubCategory_Id" />
+          <ScalarProperty Name="IsBar" ColumnName="IsBar" />
+          <ScalarProperty Name="IsRequired" ColumnName="IsRequired" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RentalMarks">
+      <EntityTypeMapping TypeName="TageerModel.RentalMark">
+        <MappingFragment StoreEntitySet="RentalMarks">
+          <ScalarProperty Name="FKCategory_Id" ColumnName="FKCategory_Id" />
+          <ScalarProperty Name="FKSubCategory_Id" ColumnName="FKSubCategory_Id" />
+          <ScalarProperty Name="FKMark_Id" ColumnName="FKMark_Id" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RentalMaterials">
+      <EntityTypeMapping TypeName="TageerModel.RentalMaterial">
+        <MappingFragment StoreEntitySet="RentalMaterials">
+          <ScalarProperty Name="FKCategory_Id" ColumnName="FKCategory_Id" />
+          <ScalarProperty Name="FKSubCategory_Id" ColumnName="FKSubCategory_Id" />
+          <ScalarProperty Name="FKMaterial_Id" ColumnName="FKMaterial_Id" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RentalTimesTypes">
+      <EntityTypeMapping TypeName="TageerModel.RentalTimesType">
+        <MappingFragment StoreEntitySet="RentalTimesTypes">
+          <ScalarProperty Name="ResourceName" ColumnName="ResourceName" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SubCategories">
+      <EntityTypeMapping TypeName="TageerModel.SubCategory">
+        <MappingFragment StoreEntitySet="SubCategories">
+          <ScalarProperty Name="ImagesCount" ColumnName="ImagesCount" />
+          <ScalarProperty Name="FKImage_Id" ColumnName="FKImage_Id" />
+          <ScalarProperty Name="FKCategory_Id" ColumnName="FKCategory_Id" />
+          <ScalarProperty Name="NameEn" ColumnName="NameEn" />
+          <ScalarProperty Name="NameAr" ColumnName="NameAr" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Activities">
+      <EntityTypeMapping TypeName="TageerModel.Activity">
+        <MappingFragment StoreEntitySet="Activities">
+          <ScalarProperty Name="NameEn" ColumnName="NameEn" />
+          <ScalarProperty Name="NameAr" ColumnName="NameAr" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Addresses">
+      <EntityTypeMapping TypeName="TageerModel.Address">
+        <MappingFragment StoreEntitySet="Addresses">
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="FkProvince_Id" ColumnName="FkProvince_Id" />
+          <ScalarProperty Name="FKCountry_Id" ColumnName="FKCountry_Id" />
+          <ScalarProperty Name="PostalCode" ColumnName="PostalCode" />
+          <ScalarProperty Name="Street" ColumnName="Street" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AlbumFiles">
+      <EntityTypeMapping TypeName="TageerModel.AlbumFile">
+        <MappingFragment StoreEntitySet="AlbumFiles">
+          <ScalarProperty Name="FkFile_Id" ColumnName="FkFile_Id" />
+          <ScalarProperty Name="FkAlbum_Id" ColumnName="FkAlbum_Id" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Albums">
+      <EntityTypeMapping TypeName="TageerModel.Album">
+        <MappingFragment StoreEntitySet="Albums">
+          <ScalarProperty Name="Notes" ColumnName="Notes" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AllFiles">
+      <EntityTypeMapping TypeName="TageerModel.AllFile">
+        <MappingFragment StoreEntitySet="AllFiles">
+          <ScalarProperty Name="FKAppInformation_Id" ColumnName="FKAppInformation_Id" />
+          <ScalarProperty Name="FkFileType_Id" ColumnName="FkFileType_Id" />
+          <ScalarProperty Name="FileUrl" ColumnName="FileUrl" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AppsInformations">
+      <EntityTypeMapping TypeName="TageerModel.AppsInformation">
+        <MappingFragment StoreEntitySet="AppsInformation">
+          <ScalarProperty Name="FkFile_Id" ColumnName="FkFile_Id" />
+          <ScalarProperty Name="Value" ColumnName="Value" />
+          <ScalarProperty Name="ResourceName" ColumnName="ResourceName" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Areas">
+      <EntityTypeMapping TypeName="TageerModel.Area">
+        <MappingFragment StoreEntitySet="Areas">
+          <ScalarProperty Name="Height" ColumnName="Height" />
+          <ScalarProperty Name="Length" ColumnName="Length" />
+          <ScalarProperty Name="Width" ColumnName="Width" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ChatMessages">
+      <EntityTypeMapping TypeName="TageerModel.ChatMessage">
+        <MappingFragment StoreEntitySet="ChatMessages">
+          <ScalarProperty Name="DateTime" ColumnName="DateTime" />
+          <ScalarProperty Name="Message" ColumnName="Message" />
+          <ScalarProperty Name="FkChat_Id" ColumnName="FkChat_Id" />
+          <ScalarProperty Name="FkUser_Id" ColumnName="FkUser_Id" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Chats">
+      <EntityTypeMapping TypeName="TageerModel.Chat">
+        <MappingFragment StoreEntitySet="Chats">
+          <ScalarProperty Name="FkUser_Id_Recived" ColumnName="FkUser_Id_Recived" />
+          <ScalarProperty Name="FkUser_Id_Starting" ColumnName="FkUser_Id_Starting" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Companies">
+      <EntityTypeMapping TypeName="TageerModel.Company">
+        <MappingFragment StoreEntitySet="Companies">
+          <ScalarProperty Name="FKActivity_Id" ColumnName="FKActivity_Id" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CompanyOffices">
+      <EntityTypeMapping TypeName="TageerModel.CompanyOffice">
+        <MappingFragment StoreEntitySet="CompanyOffices">
+          <ScalarProperty Name="FKLocation_Id" ColumnName="FKLocation_Id" />
+          <ScalarProperty Name="FKAddress_Id" ColumnName="FKAddress_Id" />
+          <ScalarProperty Name="FKCompany_Id" ColumnName="FKCompany_Id" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Countries">
+      <EntityTypeMapping TypeName="TageerModel.Country">
+        <MappingFragment StoreEntitySet="Countries">
+          <ScalarProperty Name="CountryKey" ColumnName="CountryKey" />
+          <ScalarProperty Name="FKFile_Id" ColumnName="FKFile_Id" />
+          <ScalarProperty Name="NameEn" ColumnName="NameEn" />
+          <ScalarProperty Name="NameAr" ColumnName="NameAr" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EmailsSubscriptions">
+      <EntityTypeMapping TypeName="TageerModel.EmailsSubscription">
+        <MappingFragment StoreEntitySet="EmailsSubscriptions">
+          <ScalarProperty Name="CreateDateTime" ColumnName="CreateDateTime" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FileTypes">
+      <EntityTypeMapping TypeName="TageerModel.FileType">
+        <MappingFragment StoreEntitySet="FileTypes">
+          <ScalarProperty Name="ResourceName" ColumnName="ResourceName" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Genders">
+      <EntityTypeMapping TypeName="TageerModel.Gender">
+        <MappingFragment StoreEntitySet="Genders">
+          <ScalarProperty Name="ResourceName" ColumnName="ResourceName" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="InputsTypes">
+      <EntityTypeMapping TypeName="TageerModel.InputsType">
+        <MappingFragment StoreEntitySet="InputsTypes">
+          <ScalarProperty Name="Notes" ColumnName="Notes" />
+          <ScalarProperty Name="ResourcesName" ColumnName="ResourcesName" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LanguageTypes">
+      <EntityTypeMapping TypeName="TageerModel.LanguageType">
+        <MappingFragment StoreEntitySet="LanguageTypes">
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="ResourceName" ColumnName="ResourceName" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Locations">
+      <EntityTypeMapping TypeName="TageerModel.Location">
+        <MappingFragment StoreEntitySet="Locations">
+          <ScalarProperty Name="Latitude" ColumnName="Latitude" />
+          <ScalarProperty Name="Longitude" ColumnName="Longitude" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Marks">
+      <EntityTypeMapping TypeName="TageerModel.Mark">
+        <MappingFragment StoreEntitySet="Marks">
+          <ScalarProperty Name="NameEn" ColumnName="NameEn" />
+          <ScalarProperty Name="NameAr" ColumnName="NameAr" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Materials">
+      <EntityTypeMapping TypeName="TageerModel.Material">
+        <MappingFragment StoreEntitySet="Materials">
+          <ScalarProperty Name="NameEn" ColumnName="NameEn" />
+          <ScalarProperty Name="NameAr" ColumnName="NameAr" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Menus">
+      <EntityTypeMapping TypeName="TageerModel.Menu">
+        <MappingFragment StoreEntitySet="Menus">
+          <ScalarProperty Name="ResourceName" ColumnName="ResourceName" />
+          <ScalarProperty Name="ClassIcon" ColumnName="ClassIcon" />
+          <ScalarProperty Name="OrderNumber" ColumnName="OrderNumber" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Nationalities">
+      <EntityTypeMapping TypeName="TageerModel.Nationality">
+        <MappingFragment StoreEntitySet="Nationalities">
+          <ScalarProperty Name="NameEn" ColumnName="NameEn" />
+          <ScalarProperty Name="NameAr" ColumnName="NameAr" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Notifications">
+      <EntityTypeMapping TypeName="TageerModel.Notification">
+        <MappingFragment StoreEntitySet="Notifications">
+          <ScalarProperty Name="TargetId" ColumnName="TargetId" />
+          <ScalarProperty Name="FkPage_Id" ColumnName="FkPage_Id" />
+          <ScalarProperty Name="BodyEn" ColumnName="BodyEn" />
+          <ScalarProperty Name="BodyAr" ColumnName="BodyAr" />
+          <ScalarProperty Name="IsAlsoToAdmin" ColumnName="IsAlsoToAdmin" />
+          <ScalarProperty Name="DataTime" ColumnName="DataTime" />
+          <ScalarProperty Name="TitleEn" ColumnName="TitleEn" />
+          <ScalarProperty Name="TitleAr" ColumnName="TitleAr" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Pages">
+      <EntityTypeMapping TypeName="TageerModel.Page">
+        <MappingFragment StoreEntitySet="Pages">
+          <ScalarProperty Name="Url" ColumnName="Url" />
+          <ScalarProperty Name="IsFronEnd" ColumnName="IsFronEnd" />
+          <ScalarProperty Name="IsControlPanel" ColumnName="IsControlPanel" />
+          <ScalarProperty Name="ResourceName" ColumnName="ResourceName" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PagesManagements">
+      <EntityTypeMapping TypeName="TageerModel.PagesManagement">
+        <MappingFragment StoreEntitySet="PagesManagement">
+          <ScalarProperty Name="FKPrivilege_Id" ColumnName="FKPrivilege_Id" />
+          <ScalarProperty Name="FKSeo_Id" ColumnName="FKSeo_Id" />
+          <ScalarProperty Name="ContentEn" ColumnName="ContentEn" />
+          <ScalarProperty Name="ContnetAr" ColumnName="ContnetAr" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PagesRoles">
+      <EntityTypeMapping TypeName="TageerModel.PagesRole">
+        <MappingFragment StoreEntitySet="PagesRoles">
+          <ScalarProperty Name="FkUser_Id" ColumnName="FkUser_Id" />
+          <ScalarProperty Name="IsDisplay" ColumnName="IsDisplay" />
+          <ScalarProperty Name="FkPage_Id" ColumnName="FkPage_Id" />
+          <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+          <ScalarProperty Name="IsUpdate" ColumnName="IsUpdate" />
+          <ScalarProperty Name="IsCreate" ColumnName="IsCreate" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Provinces">
+      <EntityTypeMapping TypeName="TageerModel.Province">
+        <MappingFragment StoreEntitySet="Provinces">
+          <ScalarProperty Name="FKCountry_Id" ColumnName="FKCountry_Id" />
+          <ScalarProperty Name="NameEn" ColumnName="NameEn" />
+          <ScalarProperty Name="NameAr" ColumnName="NameAr" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Roles">
+      <EntityTypeMapping TypeName="TageerModel.Role">
+        <MappingFragment StoreEntitySet="Roles">
+          <ScalarProperty Name="Notes" ColumnName="Notes" />
+          <ScalarProperty Name="ResourceName" ColumnName="ResourceName" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Seos">
+      <EntityTypeMapping TypeName="TageerModel.Seo">
+        <MappingFragment StoreEntitySet="Seo">
+          <ScalarProperty Name="DescriptionEn" ColumnName="DescriptionEn" />
+          <ScalarProperty Name="DescriptionAr" ColumnName="DescriptionAr" />
+          <ScalarProperty Name="KeywordEn" ColumnName="KeywordEn" />
+          <ScalarProperty Name="KeywordAr" ColumnName="KeywordAr" />
+          <ScalarProperty Name="TitelEn" ColumnName="TitelEn" />
+          <ScalarProperty Name="TitelAr" ColumnName="TitelAr" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sizes">
+      <EntityTypeMapping TypeName="TageerModel.Size">
+        <MappingFragment StoreEntitySet="Sizes">
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="States">
+      <EntityTypeMapping TypeName="TageerModel.State">
+        <MappingFragment StoreEntitySet="States">
+          <ScalarProperty Name="CssClassIcon" ColumnName="CssClassIcon" />
+          <ScalarProperty Name="CssClassStyle" ColumnName="CssClassStyle" />
+          <ScalarProperty Name="ResourceName" ColumnName="ResourceName" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SubMenus">
+      <EntityTypeMapping TypeName="TageerModel.SubMenu">
+        <MappingFragment StoreEntitySet="SubMenus">
+          <ScalarProperty Name="FKPage_Id" ColumnName="FKPage_Id" />
+          <ScalarProperty Name="FkMenu_Id" ColumnName="FkMenu_Id" />
+          <ScalarProperty Name="ClassIcon" ColumnName="ClassIcon" />
+          <ScalarProperty Name="OrderNumber" ColumnName="OrderNumber" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TechnicalSupports">
+      <EntityTypeMapping TypeName="TageerModel.TechnicalSupport">
+        <MappingFragment StoreEntitySet="TechnicalSupport">
+          <ScalarProperty Name="IsRead" ColumnName="IsRead" />
+          <ScalarProperty Name="CreateDateTime" ColumnName="CreateDateTime" />
+          <ScalarProperty Name="Message" ColumnName="Message" />
+          <ScalarProperty Name="Subject" ColumnName="Subject" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserLogins">
+      <EntityTypeMapping TypeName="TageerModel.UserLogin">
+        <MappingFragment StoreEntitySet="UserLogins">
+          <ScalarProperty Name="FkUser_Id" ColumnName="FkUser_Id" />
+          <ScalarProperty Name="IsSuccess" ColumnName="IsSuccess" />
+          <ScalarProperty Name="LoginDate" ColumnName="LoginDate" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserRoles">
+      <EntityTypeMapping TypeName="TageerModel.UserRole">
+        <MappingFragment StoreEntitySet="UserRoles">
+          <ScalarProperty Name="FkRole_Id" ColumnName="FkRole_Id" />
+          <ScalarProperty Name="FkUser_Id" ColumnName="FkUser_Id" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="TageerModel.User">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="IsPhoneActivated" ColumnName="IsPhoneActivated" />
+          <ScalarProperty Name="PhoneActiveCode" ColumnName="PhoneActiveCode" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="FKLanguage_Id" ColumnName="FKLanguage_Id" />
+          <ScalarProperty Name="FKGender_Id" ColumnName="FKGender_Id" />
+          <ScalarProperty Name="FKAddress_Id" ColumnName="FKAddress_Id" />
+          <ScalarProperty Name="FkImage_Id" ColumnName="FkImage_Id" />
+          <ScalarProperty Name="FullName" ColumnName="FullName" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="IsBlocked" ColumnName="IsBlocked" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UsersPrivateNotifies">
+      <EntityTypeMapping TypeName="TageerModel.UsersPrivateNotify">
+        <MappingFragment StoreEntitySet="UsersPrivateNotifies">
+          <ScalarProperty Name="IsRead" ColumnName="IsRead" />
+          <ScalarProperty Name="FKNotification_Id" ColumnName="FKNotification_Id" />
+          <ScalarProperty Name="FkUser_Id" ColumnName="FkUser_Id" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AdVisitors">
+      <EntityTypeMapping TypeName="TageerModel.AdVisitor">
+        <MappingFragment StoreEntitySet="AdVisitors">
+          <ScalarProperty Name="FKAd_Id" ColumnName="FKAd_Id" />
+          <ScalarProperty Name="Counter" ColumnName="Counter" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="ActiveAccountByPhoneAndCode" FunctionName="TageerModel.Store.ActiveAccountByPhoneAndCode" />
+    <FunctionImportMapping FunctionImportName="UpdateActiveCode" FunctionName="TageerModel.Store.UpdateActiveCode" />
+    <FunctionImportMapping FunctionImportName="Users_SelectByPk" FunctionName="TageerModel.Store.Users_SelectByPk">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TageerModel.Users_SelectByPk_Result">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="IsBlocked" ColumnName="IsBlocked" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="FullName" ColumnName="FullName" />
+          <ScalarProperty Name="FkImage_Id" ColumnName="FkImage_Id" />
+          <ScalarProperty Name="FKAddress_Id" ColumnName="FKAddress_Id" />
+          <ScalarProperty Name="FKGender_Id" ColumnName="FKGender_Id" />
+          <ScalarProperty Name="FKLanguage_Id" ColumnName="FKLanguage_Id" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="PhoneActiveCode" ColumnName="PhoneActiveCode" />
+          <ScalarProperty Name="IsPhoneActivated" ColumnName="IsPhoneActivated" />
+          <ScalarProperty Name="LanguageCode" ColumnName="LanguageCode" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="CompanyDescription" ColumnName="CompanyDescription" />
+          <ScalarProperty Name="CompanyActivityNameId" ColumnName="CompanyActivityNameId" />
+          <ScalarProperty Name="CompanyActivityNameAr" ColumnName="CompanyActivityNameAr" />
+          <ScalarProperty Name="CompanyActivityNameEn" ColumnName="CompanyActivityNameEn" />
+          <ScalarProperty Name="CompanyOffice_Id" ColumnName="CompanyOffice_Id" />
+          <ScalarProperty Name="CompanyOfficeLocation_Latitude" ColumnName="CompanyOfficeLocation_Latitude" />
+          <ScalarProperty Name="CompanyOfficeLocation_Longitude" ColumnName="CompanyOfficeLocation_Longitude" />
+          <ScalarProperty Name="CompanyOffice_Street" ColumnName="CompanyOffice_Street" />
+          <ScalarProperty Name="CompanyOffice_CountryId" ColumnName="CompanyOffice_CountryId" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>
